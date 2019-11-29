@@ -1,0 +1,23 @@
+<form (submit)="onVerify()" class="mat-typography text-center">
+  <h2>Check Your Email</h2>
+  <p class="text-left">
+    A verification code has been sent to <span class="text-accent">{{email}}</span> and will expire in
+    <span class="text-warn">{{timeRemaining ? timeRemaining.m + ':' + timeRemaining.s : '5:00'}}</span>.
+    <br>
+    You can also enter the code or verify additional emails in <span (click)="goToUserPage()" class="text-primary-dark cursor-pointer">User Settings</span>.
+  </p>
+  <mat-form-field class="mx-auto text-center" appearance="outline">
+    <input #codeInput="matInput" placeholder="Code" class="text-accent text-5xl" matNativeControl type="text" [formControl]="code" autocomplete="one-time-code">
+  </mat-form-field>
+  <div class="flex justify-around">
+    <button type="button" mat-raised-button color="accent" (click)="resendEmail()">
+      Resend Email
+      <mat-icon class="mat-icon-btn-spacing">send</mat-icon>
+    </button>
+    <button type="submit" mat-raised-button color="accent" [ngClass]="{'bg-blue-light': !code.valid, 'bg-blue': code.valid}"
+      class="text-white" [disabled]="!code.valid">
+      Verify
+      <mat-icon class="mat-icon-btn-spacing">check</mat-icon>
+    </button>
+  </div>
+</form>

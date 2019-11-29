@@ -1,0 +1,65 @@
+<mat-sidenav-container class="sidenav-container" autosize>
+  <mat-sidenav #drawer class="sidenav w-auto h-screen bg-primary-light z-50" fixedInViewport="true" [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="!(isHandset$ | async)" (openedStart)="onOpen()"
+    (closedStart)="onClose()">
+    <mat-toolbar class="cursor-pointer" [@navExpand]="navExpanded" color="primary" (click)="toggleNavExpansion()">
+      <mat-icon color="accent" class="ml-1">{{showFullMenu ? 'chevron_left' : 'chevron_right'}}</mat-icon>
+    </mat-toolbar>
+    <mat-nav-list [@navExpand]="navExpanded" (@navExpand.done)="afterNavToggled($event)" (@navExpand.start)="whenNavToggled($event)">
+      <mat-list-item *ngIf="authService.isAuthenticated()" (click)="closeNavMobile()" [routerLink]="['/user']"
+        [routerLinkActive]="'bg-shaded'">
+        <mat-icon *ngIf="!userImg" color="accent" matListIcon>face</mat-icon>
+        <img *ngIf="userImg" [src]="userImg" alt="Profile Picture" class="rounded-full w-4 mr-4" style="order: -1;"
+          [@profilePic]="navExpanded">
+        <a mat-line *ngIf="showFullMenu">User Settings</a>
+      </mat-list-item>
+      <mat-list-item (click)="closeNavMobile()" [routerLink]="['/home']" [routerLinkActive]="'bg-shaded'">
+        <a mat-line *ngIf="showFullMenu">Home</a>
+        <mat-icon color="accent" matListIcon>home</mat-icon>
+      </mat-list-item>
+      <mat-list-item *ngIf="authService.isAuthenticated()" (click)="closeNavMobile()" [routerLink]="['/newplan']"
+        [routerLinkActive]="'bg-shaded'">
+        <a mat-line *ngIf="showFullMenu">New Plan</a>
+        <mat-icon color="accent" matListIcon>add</mat-icon>
+      </mat-list-item>
+      <mat-list-item *ngIf="authService.isAuthenticated()" (click)="closeNavMobile()" [routerLink]="['/dashboard']"
+        [routerLinkActive]="'bg-shaded'">
+        <a mat-line *ngIf="showFullMenu">Dashboard</a>
+        <mat-icon color="accent" matListIcon>tune</mat-icon>
+      </mat-list-item><mat-list-item *ngIf="authService.isAuthenticated()" (click)="closeNavMobile()" [routerLink]="['/read']"
+        [routerLinkActive]="'bg-shaded'">
+        <a mat-line *ngIf="showFullMenu">Read</a>
+        <mat-icon color="accent" matListIcon>import_contacts</mat-icon>
+      </mat-list-item>
+      <mat-list-item *ngIf="authService.isAuthenticated()" (click)="closeNavMobile(); logout()">
+        <a mat-line *ngIf="showFullMenu">Logout</a>
+        <mat-icon color="accent" matListIcon>arrow_back</mat-icon>
+      </mat-list-item>
+      <mat-list-item *ngIf="!authService.isAuthenticated()" (click)="closeNavMobile()" [routerLink]="['/authenticate']"
+        [routerLinkActive]="'bg-shaded'">
+        <a mat-line *ngIf="showFullMenu">Login/Signup</a>
+        <mat-icon color="accent" matListIcon>exit_to_app</mat-icon>
+      </mat-list-item>
+      <mat-list-item (click)="closeNavMobile()" class="absolute bottom-0 w-full">
+        <a mat-line *ngIf="showFullMenu">
+          <a [routerLink]="['/terms']">Terms</a> / <a [routerLink]="['/privacy']">Privacy</a>
+        </a>
+        <mat-icon class="focus:outline-none" [routerLink]="['/terms']" color="accent" matListIcon>description</mat-icon>
+      </mat-list-item>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content [@contentMargin]="navExpanded" class="h-screen">
+    <mat-toolbar color="primary" class="sticky top-0 z-40">
+      <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()" *ngIf="(isHandset$ | async) && !drawer.opened"
+        class="xs-2:absolute">
+        <mat-icon *ngIf="!drawer.opened" aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span class="flex items-center xs-2:mx-auto sm:text-2xl md:text-3xl font-serif text-accent">
+        <mat-icon class="hidden xs-2:inline-block">import_contacts</mat-icon>
+        <span class="mx-4 xs-2:mx-2 sm:mx-4">Bible Reminder 365</span>
+        <mat-icon class="hidden xs-2:inline-block">devices_other</mat-icon>
+      </span>
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

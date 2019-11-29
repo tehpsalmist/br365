@@ -1,0 +1,14 @@
+<section class="mat-typography w-full">
+  <div class="plan-grid">
+    <br365-title [planName]="plan.planName" [name]="plan.name" (updatePlanName)="onUpdatePlanName($event)" class="md:h-full"></br365-title>
+    <br365-chapters-per-day [chapters]="plan.chapters" (updateChapters)="onUpdateChapters($event)" class="h-full"></br365-chapters-per-day>
+    <br365-tomorrows-reading [book]="plan.nextChapter.book" [chapter]="plan.nextChapter.chapter" (updateReference)="onUpdateReference($event)"
+      class="h-full"></br365-tomorrows-reading>
+    <br365-delivery-address [email]="plan.email" (updateEmail)="onUpdateEmail($event)" class="h-full"></br365-delivery-address>
+    <br365-delivery-phone [phone]="plan.phone" [carrier]="plan.carrier" (updatePhone)="onUpdatePhone($event)" class="h-full"></br365-delivery-phone>
+    <br365-delivery-time class="h-full" (updateTime)="onUpdateTime($event)" [timeZone]="plan.timeZone" [time]="plan.time"></br365-delivery-time>
+    <br365-translation class="h-full" (updateTranslation)="onUpdateTranslation($event)" [translationCode]="plan.translation"></br365-translation>
+    <br365-activity (updateEmailStatus)="onUpdateEmailStatus($event)" (updateTextStatus)="onUpdateTextStatus($event)" (delete)="onDelete()" [activeText]="plan.activeText" [activeEmail]="plan.activeEmail"></br365-activity>
+    <br365-info [firstDay]="plan.firstday.string" [startingReference]="plan.startingChapter" [lastReference]="plan.lastChapter"></br365-info>
+  </div>
+</section>

@@ -1,0 +1,143 @@
+<main class="mat-typography h-full-component w-full">
+  <div class="flex flex-col min-h-full items-center p-2 overflow-scroll">
+    <img [src]="profile.picture" alt="Profile Picture" class="rounded-full w-20 h-20 mt-12">
+    <h2>{{profile['https://preferredName'] || profile.name || profile.nickname}}</h2>
+    <!-- Registered Emails -->
+    <mat-card class="m-2 w-full max-w-md relative">
+      <mat-progress-spinner class="absolute top-0 right-0 mr-1 mt-1" *ngIf="sendingEmailCode" mode="indeterminate" color="accent"
+        diameter="40"></mat-progress-spinner>
+      <mat-card-title>Registered Emails:</mat-card-title>
+      <form class="flex flex-wrap justify-between items-center p-2" *ngFor="let email of profile['https://bremails']; let i = index">
+        <mat-icon *ngIf="email.email !== profile.email" class="mr-2 cursor-pointer" (click)="removeEmail(email)" color="accent" mat-fab>
+          delete
+        </mat-icon>
+        <p class="m-2 mr-auto text-accent">
+          {{email.email}}
+          <span *ngIf="email.email === profile.email">*</span>
+        </p>
+        <button mat-raised-button *ngIf="!email.verified && !email.pending" class="text-white bg-blue mr-2"
+          (click)="requestEmailVerification(email.email)">
+          Verify
+          <mat-icon class="mat-icon-btn-spacing">assignment_turned_in</mat-icon>
+        </button>
+        <mat-icon [color]="email.verified ? 'primary' : 'warn'">{{email.verified
+          ? 'check' : 'clear'}}</mat-icon>
+        <button mat-raised-button type="button" (click)="resendEmail(email.email)" *ngIf="email.pending && controls[email.email].invalid"
+          color="accent" class="ml-2 mr-1">
+          Resend Email
+          <mat-icon class="mat-icon-btn-spacing">send</mat-icon>
+        </button>
+        <button type="button" (click)="submitEmailCode(email.email, controls[email.email].value)" mat-raised-button *ngIf="email.pending && controls[email.email].valid"
+          class="text-white bg-blue ml-2 mr-1">
+          Submit Code
+          <mat-icon class="mat-icon-btn-spacing">check</mat-icon>
+        </button>
+        <span class="text-warn mx-1" *ngIf="email.pending && clocks[email.email]">{{clocks[email.email].m}}:{{clocks[email.email].s}}</span>
+        <mat-form-field *ngIf="email.pending" class="ml-1 text-center h-5 w-10" appearance="outline"
+          style="transform: translateY(-9px);">
+          <input matInput placeholder="Code" class="text-accent" type="text" style="transform: translateY(-4px);" [formControl]="controls[email.email]" (keyup.enter)="submitEmailCode(email.email, controls[email.email].value)" autocomplete="one-time-code">
+        </mat-form-field>
+        <mat-divider style="order: 2" class="mt-2" [inset]="true"></mat-divider>
+      </form>
+      <mat-card-actions class="flex flex-wrap justify-end items-center">
+        <mat-form-field style="transform: translateY(8px);">
+          <input #newEmailControl="matInput" matNativeControl placeholder="Email" class="text-accent" type="text"
+            [formControl]="newEmail" (keyup.enter)="addEmail()">
+          <mat-icon matSuffix>mail_outline</mat-icon>
+        </mat-form-field>
+        <button [disabled]="newEmail.invalid" class="ml-1 sm:ml-2" type="button" color="accent" mat-raised-button
+          (click)="addEmail()">
+          Add
+        </button>
+      </mat-card-actions>
+    </mat-card>
+    <!-- Registered Phones -->
+    <mat-card class="m-2 w-full max-w-md relative">
+      <mat-progress-spinner class="absolute top-0 right-0 mr-1 mt-1" *ngIf="sendingPhoneCode" mode="indeterminate" color="accent"
+        diameter="40"></mat-progress-spinner>
+      <mat-card-title>Registered Phone Numbers:</mat-card-title>
+      <form class="flex flex-wrap justify-between items-center p-2"
+        *ngFor="let phone of profile['https://brphones']; let i = index">
+        <mat-icon class="mr-2 cursor-pointer" (click)="removePhone(phone)" color="accent"
+          mat-fab>
+          delete
+        </mat-icon>
+        <p class="m-2 mr-auto text-accent">
+          {{phone.phone | phoneFormat}} | {{phone.carrier | carrierDisplayName}}
+        </p>
+        <button mat-raised-button *ngIf="!phone.verified && !phone.pending"
+          class="text-white bg-blue mr-2" (click)="requestTextVerification(phone.phone, phone.carrier)">
+          Verify
+          <mat-icon class="mat-icon-btn-spacing">assignment_turned_in</mat-icon>
+        </button>
+        <mat-icon [color]="phone.verified ? 'primary' : 'warn'">
+          {{phone.verified ? 'check' : 'clear'}}
+        </mat-icon>
+        <button mat-raised-button type="button" (click)="resendText(phone.phone, phone.carrier)"
+          *ngIf="phone.pending && controls[phone.phone].invalid" color="accent" class="ml-2 mr-1">
+          Resend Text
+          <mat-icon class="mat-icon-btn-spacing">send</mat-icon>
+        </button>
+        <button type="button"
+          (click)="submitTextCode(phone.phone, phone.carrier, controls[phone.phone].value)"
+          mat-raised-button
+          *ngIf="phone.pending && controls[phone.phone].valid"
+          class="text-white bg-blue ml-2 mr-1">
+          Submit Code
+          <mat-icon class="mat-icon-btn-spacing">check</mat-icon>
+        </button>
+        <span class="text-warn mx-1"
+          *ngIf="phone.pending && clocks[phone.phone]">{{clocks[phone.phone].m}}:{{clocks[phone.phone].s}}</span>
+        <mat-form-field *ngIf="phone.pending" class="ml-1 text-center h-5 w-10" appearance="outline"
+          style="transform: translateY(-9px);">
+          <input matInput placeholder="Code" class="text-accent" type="text" style="transform: translateY(-4px);" [formControl]="controls[phone.phone]" (keyup.enter)="submitTextCode(phone.phone, phone.carrier, controls[phone.phone].value)" autocomplete="one-time-code">
+        </mat-form-field>
+        <mat-divider style="order: 2" class="mt-2" [inset]="true"></mat-divider>
+      </form>
+      <mat-card-actions class="flex flex-wrap justify-end items-center">
+        <mat-form-field style="transform: translateY(8px);" class="mr-2 w-16">
+          <mat-select [formControl]="newCarrier" placeholder="Carrier">
+            <mat-option *ngFor="let carrier of carriers" [value]="carrier">{{carrier | carrierDisplayName}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field style="transform: translateY(8px);" class="w-14">
+          <input #newPhoneControl="matInput" matNativeControl placeholder="Phone" class="text-accent" type="text"
+            [formControl]="newPhone" (keyup.enter)="addPhone()">
+          <mat-icon matSuffix>phone_iphone</mat-icon>
+        </mat-form-field>
+        <button [disabled]="newPhone.invalid || newCarrier.invalid" class="ml-1 sm:ml-2" type="button" color="accent" mat-raised-button
+          (click)="addPhone()">
+          Add
+        </button>
+      </mat-card-actions>
+    </mat-card>
+    <button *ngIf="!changingName" type="button" class="mb-12" color="primary" mat-raised-button (click)="showNameOptions()">Change
+      Name</button>
+    <mat-card *ngIf="changingName" class="m-2 mb-12 w-full max-w-md">
+      <mat-progress-spinner class="absolute top-0 right-0 mr-1 mt-1" *ngIf="sendingName" mode="indeterminate" color="accent"
+        diameter="40"></mat-progress-spinner>
+      <mat-card-title class="mb-4">Choose Your Preferred Name:</mat-card-title>
+      <mat-card-content class="flex flex-col items-start">
+        <button [disabled]="sendingName" class="mb-4" *ngFor="let name of nameOptions" type="button" color="accent"
+          mat-raised-button (click)="chooseName(name)">{{name}}</button>
+        <div class="flex flex-wrap items-center">
+          <button [disabled]="sendingName" type="button" color="accent" mat-raised-button (click)="chooseName(otherName.value)">
+            {{otherName.value || 'Other'}}
+          </button>
+          <mat-form-field class="ml-2" style="transform: translateY(8px);">
+            <input matInput class="text-accent" type="text" [formControl]="otherName" (keyup.enter)="chooseName(otherName.value)">
+            <mat-icon matSuffix>label_outline</mat-icon>
+          </mat-form-field>
+        </div>
+      </mat-card-content>
+      <mat-card-actions class="flex justify-end pr-2">
+        <button *ngIf="changingName" type="button" color="primary" mat-raised-button (click)="showNameOptions()">
+          Done
+        </button>
+      </mat-card-actions>
+    </mat-card>
+    <button type="button" color="warn" class="block mt-auto ml-auto mb-2 mr-auto sm:mb-4 sm:mr-4" mat-button (click)="deleteAccount()">
+      Delete Account
+    </button>
+  </div>
+</main>

@@ -1,0 +1,7 @@
+{
+  "standard.autoFixOnSave": true,
+  "standard.options": {
+    "fix": "*.ts"
+  },
+  "standard.run": "onSave"
+}

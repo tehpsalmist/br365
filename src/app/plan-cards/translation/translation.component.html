@@ -1,0 +1,25 @@
+<mat-card class="sm-3:h-25">
+  <mat-card-header>
+    <p>
+      Preferred Translation
+    </p>
+    <mat-icon class="absolute right-0 top-0 mt-4 mr-4" color="primary" svgIcon="translation-outline"></mat-icon>
+  </mat-card-header>
+  <mat-card-content class="card-content-height">
+    <div class="flex items-center justify-center h-full">
+      <h2 *ngIf="!editing" class="w-full flex justify-center">
+        <span class="text-accent">{{translation.fullText}}</span>
+        <mat-icon class="cursor-pointer ml-2 text-primary-light" (click)="onEditMode()">create</mat-icon>
+      </h2>
+      <form (ngSubmit)="onDoneEditing()" *ngIf="editing" [formGroup]="form" class="flex justify-center items-center w-auto h-full">
+        <mat-form-field [floatLabel]="'never'" class="text-lg flex-grow ml-2 text-accent w-auto">
+          <mat-select #translationControl matNativeControl formControlName="translation" (selectionChange)="changed = true">
+            <mat-option *ngFor="let translation of translations" [value]="translation.code">{{translation.fullText}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-icon tabindex="0" [color]="form.valid ? 'primary' : 'warn'" class="save-icon" [ngClass]="changed && form.valid ? 'save-icon-active' : ''"
+          (click)="onDoneEditing()" (keydown.enter)="onDoneEditing()">{{form.valid ? 'check' : 'close'}}</mat-icon>
+      </form>
+    </div>
+  </mat-card-content>
+</mat-card>

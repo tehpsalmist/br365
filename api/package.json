@@ -1,0 +1,38 @@
+{
+  "name": "biblereminder365",
+  "version": "5.0.0",
+  "description": "Bible Reminder 365 sends your Bible reading plan to your inbox every day.",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "build": "echo 'Built!'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tehpsalmist/NodeCode.git"
+  },
+  "author": "Ben Steward",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tehpsalmist/NodeCode/issues"
+  },
+  "homepage": "https://github.com/tehpsalmist/NodeCode#readme",
+  "dependencies": {
+    "@types/mongoose": "^5.5.32",
+    "auth0": "^2.20.0",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "express-jwt": "^5.3.1",
+    "ioredis": "^4.14.1",
+    "jwks-rsa": "^1.6.0",
+    "mongoose": "^5.7.12",
+    "net-bible-api": "0.0.2",
+    "node-fetch": "^1.7.3",
+    "nodemailer": "^4.6.8",
+    "sanitize": "^2.1.0",
+    "tslib": "^1.10.0",
+    "validator": "^10.9.0"
+  },
+  "devDependencies": {}
+}

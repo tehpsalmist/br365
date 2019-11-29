@@ -1,0 +1,25 @@
+<mat-card class="h-25">
+  <mat-card-header>
+    <p>
+      Plan Status
+    </p>
+    <mat-icon class="absolute right-0 top-0 mt-4 mr-4" color="{{activeEmail || activeText ? 'primary' : 'warn'}}">{{activeEmail || activeText ?
+      'play_circle_outline' : 'pause_circle_outline'}}</mat-icon>
+  </mat-card-header>
+  <mat-card-content class="card-content-height">
+    <div class="flex flex-col items-center justify-center md:flex-row md:justify-around w-full h-full">
+      <button mat-raised-button [color]="activeEmail ? 'accent' : 'primary'" (click)="changeEmailStatus()" class="flex justify-center items-center mb-4 md:mb-0">
+        {{activeEmail ? 'Pause Emails' : 'Resume Emails'}}
+        <mat-icon class="mat-icon-btn-spacing" matSuffix>{{activeEmail ? 'pause' : 'play_arrow'}}</mat-icon>
+      </button>
+      <button mat-raised-button [color]="activeText ? 'accent' : 'primary'" (click)="changeTextStatus()" class="flex justify-center items-center mx-2 mb-4 md:mb-0">
+        {{activeText ? 'Pause Texts' : 'Resume Texts'}}
+        <mat-icon class="mat-icon-btn-spacing" matSuffix>{{activeText ? 'pause' : 'play_arrow'}}</mat-icon>
+      </button>
+      <button mat-button color="warn" (click)="deletePlan()" class="flex justify-center items-center">
+        Delete Plan
+        <mat-icon class="mat-icon-btn-spacing">not_interested</mat-icon>
+      </button>
+    </div>
+  </mat-card-content>
+</mat-card>

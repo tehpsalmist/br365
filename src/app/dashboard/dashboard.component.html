@@ -1,0 +1,35 @@
+<main class="mat-typography w-full h-full-component p-4">
+  <div *ngFor="let plan of plans" [id]="plan._id">
+    <mat-expansion-panel [expanded]="expanded[plan._id]" (opened)="expanded[plan._id] = true" (closed)="expanded[plan._id] = false"
+      hideToggle="true" multi="true" class="my-2 cursor-pointer sticky pin-topbar z-30">
+      <mat-expansion-panel-header [expandedHeight]="'64px'" [collapsedHeight]="'80px'">
+        <h1 class="my-2 mr-auto text-accent">{{plan.planName}}</h1>
+        <h2 class="my-2 mx-auto text-accent-light hidden md:block">
+          {{plan.email}}
+        </h2>
+        <h2 class="my-2 ml-auto text-accent-light hidden xs-2:block">
+          {{plan.chapters}}
+          <span class="ml-1 hidden sm:inline-block">{{plan.chapters > 1 ? 'chapters' : 'chapter'}}</span>
+          <span class="ml-2 hidden xs-2:inline-block">{{plan.translation | abbrev}}</span>
+        </h2>
+      </mat-expansion-panel-header>
+      <br365-reading-plan [plan]="plan" (planChange)="onPlanChange($event)"></br365-reading-plan>
+    </mat-expansion-panel>
+  </div>
+  <footer class="w-full flex flex-wrap justify-around p-1 sm:p-8 text-center">
+    <h3 *ngIf="!plans || !plans.length" class="w-full">
+      You don't appear to have any reading plans yet. To recover an old plan, verify your email address in <a class="text-accent"
+        [routerLink]="['/user']">User Settings</a>.
+    </h3>
+    <button type="button" mat-raised-button color="accent" (click)="hydratePlans()" class="mt-4">
+      Refresh Dashboard
+      <mat-icon class="mat-icon-btn-spacing" matSuffix color="primary">refresh</mat-icon>
+    </button>
+    <button *ngIf="!plans || !plans.length" type="button" mat-raised-button color="accent" [routerLink]="['/newplan']"
+      class="mt-4">
+      Get Started
+      <mat-icon class="mat-icon-btn-spacing" matSuffix color="primary">arrow_forward</mat-icon>
+    </button>
+  </footer>
+</main>
+<mat-spinner *ngIf="loading" color="accent" [diameter]="48" class="fixed top-0 right-0 mt-1 mr-1 sm:mt-2 sm:mr-2 z-50"></mat-spinner>

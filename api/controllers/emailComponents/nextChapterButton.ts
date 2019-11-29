@@ -1,0 +1,3 @@
+import { baseUrl } from '../../config'
+
+export const nextChapterButton = (translation, reference) => `<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td><table border="0" cellspacing="0" cellpadding="0" align="center"><tr><td align="center" style="border-radius: 3px;" bgcolor="#7e57c2"><a href="${baseUrl}/read/${translation}/${reference}" target="_blank" style="font-size: 16px; font-family: Helvetica, Arial, sans-serif; color: #9ccc65; text-decoration: none; text-decoration: none;border-radius: 3px; padding: 12px 18px; border: 1px solid #7e57c2; display: inline-block;">Read Next Chapter &rarr;</a></td></tr></table></td></tr></table>`

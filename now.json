@@ -1,0 +1,47 @@
+{
+  "name": "biblereminder365",
+  "env": {
+    "BIBLE_EMAIL": "@br365-email",
+    "MONGO_USER": "@br365-mongo-user",
+    "MONGO_PASSWORD": "@br365-mongo-password",
+    "PRODUCTION": "@br365-production",
+    "ESV_API_TOKEN": "@br365-esv-api-token",
+    "BIBLE_EMAIL_CLIENT_ID": "@br365-email-client-id",
+    "BIBLE_EMAIL_CLIENT_SECRET": "@br365-email-client-secret",
+    "BIBLE_EMAIL_REFRESH_TOKEN": "@br365-email-refresh-token",
+    "BIBLE_AUTH0_SERVER_CLIENT_ID": "@br365-auth0-server-client-id",
+    "BIBLE_AUTH0_SERVER_CLIENT_SECRET": "@br365-auth0-server-client-secret",
+    "REDIS_AUTH": "@redis-auth",
+    "REDIS_ENDPOINT": "@redis-endpoint",
+    "REDIS_PORT": "@redis-port",
+    "LATER_ON_REFRESH_TOKEN": "@later-on-refresh-token",
+    "LATER_ON_BR365_REFRESH_TOKEN": "@later-on-br365-refresh-token",
+    "LATER_ON_BR365_ACCESS_TOKEN": "@later-on-br365-access-token",
+    "LATER_ON_BR365_HEADER_SECRET": "@later-on-br365-header-secret"
+  },
+  "alias": [
+    "biblereminder365.com",
+    "biblereminder365"
+  ],
+  "version": 2,
+  "routes": [
+    {
+      "src": "/webhooks",
+      "dest": "api/app.ts"
+    },
+    {
+      "src": "/webhooks/.*",
+      "dest": "api/app.ts"
+    },
+    {
+      "src": "/api/.*",
+      "dest": "api/app.ts"
+    }
+  ],
+  "functions": {
+    "api/app.ts": {
+      "memory": 3008,
+      "maxDuration": 60
+    }
+  }
+}

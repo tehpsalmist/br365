@@ -1,0 +1,139 @@
+<main class="container w-full p-4 mat-typography relative">
+  <h1 class="text-center text-accent">Set Up Your Reading Plan</h1>
+  <form #signUp="ngForm" [formGroup]="signUpForm" (ngSubmit)="onSavePlan()" class="signup-grid text-accent">
+    <mat-form-field appearance="outline">
+      <mat-label>Starting Book <span class="text-warn">*</span></mat-label>
+      <mat-select (selectionChange)="assessChapters(selectedBook)" [(value)]="selectedBook" formControlName="book">
+        <mat-option *ngFor="let book of books" [value]="book.value">{{book.value | display}}</mat-option>
+      </mat-select>
+      <mat-icon matSuffix svgIcon="book-outline"></mat-icon>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Starting Chapter <span class="text-warn">*</span></mat-label>
+      <mat-select formControlName="chapter">
+        <mat-option *ngFor="let chapter of availableChapters" [value]="chapter">{{chapter}}</mat-option>
+      </mat-select>
+      <mat-icon matSuffix>bookmark_border</mat-icon>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Chapters per Day <span class="text-warn">*</span></mat-label>
+      <input matInput min="1" max="12" type="number" formControlName="chapters">
+      <mat-icon matSuffix>filter_2</mat-icon>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Preferred Translation <span class="text-warn">*</span></mat-label>
+      <mat-select formControlName="translation">
+        <mat-option *ngFor="let translation of translations" [value]="translation.code">{{translation.fullText}}</mat-option>
+      </mat-select>
+      <mat-icon matSuffix svgIcon="translation-outline"></mat-icon>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Time of Day <span class="text-warn">*</span></mat-label>
+      <input matInput type="time" placeholder="ex: 15:00 or 07:00" formControlName="time">
+      <mat-icon matSuffix>access_time</mat-icon>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Your TimeZone <span class="text-warn">*</span></mat-label>
+      <mat-select formControlName="timeZone">
+        <mat-option *ngFor="let timeZone of timeZones" [value]="timeZone.value">{{timeZone.label}}</mat-option>
+      </mat-select>
+      <mat-icon matSuffix>language</mat-icon>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Plan Name <span class="text-warn">*</span></mat-label>
+      <input matInput type="text" placeholder="Something Memorable" formControlName="planName">
+      <mat-icon matSuffix>label_outline</mat-icon>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Your Email</mat-label>
+      <input matInput type="email" formControlName="email" [matAutocomplete]="suggestedEmails">
+      <mat-icon matSuffix>mail_outline</mat-icon>
+      <mat-autocomplete #suggestedEmails="matAutocomplete">
+        <mat-option *ngFor="let suggestedEmail of availableEmails" [value]="suggestedEmail">
+          {{suggestedEmail}}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Your 10-digit Phone</mat-label>
+      <input matInput type="text" formControlName="phone" [matAutocomplete]="suggestedPhones">
+      <mat-icon matSuffix>phone_iphone</mat-icon>
+      <mat-autocomplete #suggestedPhones="matAutocomplete">
+        <mat-option *ngFor="let suggestedPhone of availablePhones" [value]="suggestedPhone">
+          {{suggestedPhone | phoneFormat}}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Your Mobile Carrier</mat-label>
+      <mat-select formControlName="carrier">
+        <mat-option *ngFor="let carrier of carriers" [value]="carrier">{{carrier | carrierDisplayName}}</mat-option>
+      </mat-select>
+      <mat-icon matSuffix>signal_cellular_alt</mat-icon>
+    </mat-form-field>
+    <mat-card-actions class="signup-actions flex flex-wrap justify-around">
+      <button *ngIf="(!email.errors?.unverifiedEmail || email.value === expiringEmail) && (!phone.hasError('unverifiedPhone') || phone.value === expiringPhone)" type="submit" class="h-6 mb-4 w-28 relative"
+        color="accent" [disabled]="signUpForm.invalid" mat-raised-button>
+        Save My Plan
+        <mat-icon class="mat-icon-btn-spacing">import_contacts</mat-icon>
+        <mat-progress-spinner class="absolute top-0 right-0 mr-2 mt-2" diameter="32" [color]="errorState ? 'warn' : 'primary'" [value]="saveProgress"></mat-progress-spinner>
+        <mat-icon class="absolute top-0 right-0 mr-3 mt-3" [@saved]="savedState" [color]="errorState ? 'warn' : 'primary'">
+          {{errorState ? 'close' : 'check'}}
+        </mat-icon>
+      </button>
+      <button *ngIf="email.hasError('unverifiedEmail') && email.value !== expiringEmail" type="button" class="h-6 relative bg-blue text-white"
+        (click)="requestEmailVerification()" mat-raised-button>
+        Verify {{email.value}}
+        <mat-icon class="text-white mat-icon-btn-spacing">assignment_turned_in</mat-icon>
+      </button>
+      <button *ngIf="phone.hasError('unverifiedPhone') && phone.value !== expiringPhone" type="button"
+        class="h-6 relative bg-blue text-white" (click)="requestTextVerification()" mat-raised-button>
+        Verify {{phone.value | phoneFormat}}
+        <mat-icon class="text-white mat-icon-btn-spacing">assignment_turned_in</mat-icon>
+      </button>
+      <p *ngIf="email.hasError('unverifiedEmail') && email.value !== expiringEmail || phone.hasError('unverifiedPhone') && phone.value !== expiringPhone" class="w-full text-center">
+        <mat-icon style="transform: translateY(20%);">lock</mat-icon>
+        In the interest of security, BR365 only sends reading plans to verified emails and phone numbers.
+        <br>
+        Verification is simple, just click the button above and enter the 6-digit code you receive in the box!
+      </p>
+    </mat-card-actions>
+  </form>
+  <form (submit)="submitEmailVerificationCode(expiringEmail, emailCode.value)" *ngIf="expiringEmail && emailTimeRemaining" class="mt-6 w-full flex-col text-center">
+    <mat-form-field class="mx-auto text-center" appearance="outline">
+      <input #codeInput="matInput" placeholder="Code" class="text-accent text-5xl" matNativeControl type="text" [formControl]="emailCode" autocomplete="one-time-code">
+    </mat-form-field>
+    <p>Verification code for <span class="text-accent">{{expiringEmail}}</span> expires in <span class="text-warn">{{emailTimeRemaining
+        ? emailTimeRemaining.m + ':' + emailTimeRemaining.s : 'less than 5 minutes'}}</span>.</p>
+    <div class="flex justify-center flex-wrap">
+      <button type="button" mat-raised-button color="accent" (click)="resendEmail()">
+        Resend Email
+        <mat-icon class="mat-icon-btn-spacing">send</mat-icon>
+      </button>
+      <button mat-raised-button type="submit" [ngClass]="{'bg-blue-light': !emailCode.valid, 'bg-blue': emailCode.valid}" class="h-6 ml-4 relative text-white"
+        [disabled]="!emailCode.valid">
+        Submit Code for {{expiringEmail}}
+        <mat-icon class="mat-icon-btn-spacing">check</mat-icon>
+      </button>
+    </div>
+  </form>
+  <form (submit)="submitTextVerificationCode(expiringPhone, expiringCarrier, phoneCode.value)" *ngIf="expiringPhone && phoneTimeRemaining"
+    class="mt-6 w-full flex-col text-center">
+    <mat-form-field class="mx-auto text-center" appearance="outline">
+      <input #codeInput="matInput" placeholder="Code" class="text-accent text-5xl" matNativeControl type="text" [formControl]="phoneCode" autocomplete="one-time-code">
+    </mat-form-field>
+    <p>Verification code for <span class="text-accent">{{expiringPhone | phoneFormat}} | {{expiringCarrier | carrierDisplayName}}</span> expires in <span class="text-warn">{{phoneTimeRemaining
+          ? phoneTimeRemaining.m + ':' + phoneTimeRemaining.s : 'less than 5 minutes'}}</span>.</p>
+    <div class="flex justify-center flex-wrap">
+      <button type="button" mat-raised-button color="accent" (click)="resendText()">
+        Resend Text
+        <mat-icon class="mat-icon-btn-spacing">send</mat-icon>
+      </button>
+      <button mat-raised-button type="submit" [ngClass]="{'bg-blue-light': !phoneCode.valid, 'bg-blue': phoneCode.valid}"
+        class="h-6 ml-4 relative text-white" [disabled]="!phoneCode.valid">
+        Submit Code for {{expiringPhone | phoneFormat}}
+        <mat-icon class="mat-icon-btn-spacing">check</mat-icon>
+      </button>
+    </div>
+  </form>
+</main>

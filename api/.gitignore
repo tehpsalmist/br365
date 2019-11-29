@@ -1,0 +1,14 @@
+node_modules/
+Bible-kjv/
+helpful.json
+create*.js
+oc
+secrets/
+gulpfile.js
+media
+.vscode
+.npmignore
+public/
+logo/
+.DS_Store
+testData

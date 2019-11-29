@@ -1,0 +1,16 @@
+<mat-card class="mat-typography">
+  <mat-card-content class="flex flex-wrap items-baseline justify-around">
+    <h3 class="my-0 mx-2 text-accent">
+      First Day:
+      <span class="text-primary">{{firstDay}}</span>
+    </h3>
+    <h3 class="my-0 mx-2 text-accent">
+      First Chapter:
+      <span class="text-primary">{{startingReference.book}} {{startingReference.chapter}}</span>
+    </h3>
+    <h3 class="my-0 mx-2 text-accent">
+      Last Chapter Sent:
+      <span class="text-primary">{{lastReference.book ? lastReference.book + ' ' + lastReference.chapter : '--'}}</span>
+    </h3>
+  </mat-card-content>
+</mat-card>

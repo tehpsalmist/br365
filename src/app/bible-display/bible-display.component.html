@@ -1,0 +1,34 @@
+<main  class="mat-typography w-full h-full-component relative overflow-scroll">
+
+  <form [formGroup]="form" class="sticky top-0 flex justify-center items-start h-6 z-10" style="background-color: rgba(250, 250, 250, 0.8);">
+    <button mat-raised-button color="accent" type="button" class="left-0 ml-2 sm:mr-auto next-chapter" [routerLink]="['/read', version, prevReference]">
+      <mat-icon style="margin-left: 0;" class="mat-icon-btn-spacing sm:mr-2" matPrefix>arrow_back</mat-icon>
+      <span class="hidden sm:inline-block">Prev</span>
+    </button>
+    <mat-form-field [floatLabel]="'never'" class="text-lg text-accent w-12" style="transform: translateY(-8px);">
+      <mat-select #translationControl matNativeControl formControlName="translation" (selectionChange)="changeVersion()">
+        <mat-option *ngFor="let translation of constants.translations" [value]="translation.code">{{translation.acronym}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <div class="cursor-pointer outline-none relative ml-4 text-lg text-accent z-40" style="transform: translateY(8px)" (blur)="closeLists()">
+      <span tabindex="0" (click)="openList('book')" class="outline-none">
+        {{displayBook | display}} {{displayChapter}} <mat-icon style="transform: translate(4px, 4px)">arrow_drop_down</mat-icon>
+      </span>
+      <div class="bg-underline h-1px w-full" style="transform: translateY(6px);"></div>
+      <div *ngIf="choosingBook" class="picker-list">
+        <button class="picker-button" *ngFor="let book of constants.books" (click)="chooseBook(book)">{{book.abbrev}}</button>
+      </div>
+      <div *ngIf="choosingChapter" class="picker-list">
+        <button class="picker-button" *ngFor="let chap of chapterOptions" (click)="chooseChapter(chap)">{{chap.label}}</button>
+      </div>
+    </div>
+    <button mat-raised-button color="accent" type="button" class="right-0 mr-2 sm:ml-auto next-chapter" [routerLink]="['/read', version, nextReference]">
+      <span class="hidden sm:inline-block">Next</span>
+      <mat-icon class="mat-icon-btn-spacing ml-0 sm:ml-2" matSuffix>arrow_forward</mat-icon>
+    </button>
+  </form>
+  <div class="pb-22 sm:pb-12 relative">
+    <section [innerHTML]="passage" class="max-w-md mx-auto p-4 text-lg"></section>
+    <mat-spinner *ngIf="loading" color="accent" [diameter]="56" class="fixed z-50" style="top: calc(50% - 28px); left: calc(50% - 28px);"></mat-spinner>
+  </div>
+</main>

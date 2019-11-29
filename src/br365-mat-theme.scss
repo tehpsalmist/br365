@@ -1,0 +1,10 @@
+@import '~@angular/material/theming';
+@include mat-core();
+
+$br365-primary: mat-palette($mat-light-green, 400, 200, 800);
+$br365-accent:  mat-palette($mat-deep-purple, 400, 100, 800);
+$br365-warn:    mat-palette($mat-red, 300);
+
+$br365-theme: mat-light-theme($br365-primary, $br365-accent, $br365-warn);
+
+@include angular-material-theme($br365-theme);

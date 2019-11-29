@@ -1,0 +1,21 @@
+<mat-card class="mat-typography md:h-25">
+  <mat-card-header>
+    <p>
+      Plan Name
+    </p>
+    <mat-icon class="absolute right-0 top-0 mt-4 mr-4" color="primary">label_outline</mat-icon>
+  </mat-card-header>
+  <mat-card-content class="flex flex-wrap items-center justify-center md:card-content-height">
+    <h2 *ngIf="!editing" class="m-0 text-accent">{{planName}}
+      <mat-icon (click)="onEditMode()" class="cursor-pointer text-primary-light ml-2">create</mat-icon>
+    </h2>
+    <form (ngSubmit)="onDoneEditing()" *ngIf="editing" [formGroup]="form" class="flex justify-center items-center w-auto m-0">
+      <mat-form-field [floatLabel]="'never'" class="text-lg text-accent w-auto m-0">
+        <input #control="matInput" matNativeControl type="text" formControlName="planName" (input)="changed = true"
+          placeholder="Choose a Plan Name">
+      </mat-form-field>
+      <mat-icon tabindex="0" [color]="form.valid ? 'primary' : 'warn'" matSuffix class="save-icon" [ngClass]="changed && form.valid ? 'save-icon-active' : ''"
+        (click)="onDoneEditing()" (keydown.enter)="onDoneEditing()">{{form.valid ? 'check' : 'close'}}</mat-icon>
+    </form>
+  </mat-card-content>
+</mat-card>
