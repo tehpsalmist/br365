@@ -1,29 +1,23 @@
-![Angular Logo](../.github/images/angular.svg)
+# Bible Reminder 365
+This app exists to help anyone interested in reading the Bible daily to stay on track, by emailing you the full text of your Bible reading plan for that day--every day.
 
-# Angular Example
+Sign up at [biblereminder365.com](https://biblereminder365.com).
 
-This directory is a brief example of an [Angular](https://angular.io/) app that can be deployed with ZEIT Now and zero configuration.
+Currently, users can receive between 1 and 12 chapters of the Bible each day from the following translations:
+- ESV
+- NET
+- KJV
+- KVJ Easy Read
+- ASV
+- WEB
+- Basic English Bible
+- Douay Rheims
+- Young's Literal Translation
+- Darby
+- Webster's Bible
 
-## Deploy Your Own
+Emails are pre-formatted for readability and can be delivered at whatever time of day the user chooses. Text messages can also be sent, with a link to read the Bible in the web app.
 
-Deploy your own Angular project with ZEIT Now.
+If you have any questions or suggestions, I look forward to [hearing from you](mailto:bstewardcodes@gmail.com)!
 
-[![Deploy with ZEIT Now](https://zeit.co/button)](https://zeit.co/new/project?template=https://github.com/zeit/now-examples/tree/master/angular)
-
-_Live Example: https://angular.now-examples.now.sh_
-
-### How We Created This Example
-
-To get started with Angular, you can use the [Angular CLI](https://cli.angular.io/) to initialize the project:
-
-```shell
-$ ng new
-```
-
-### Deploying From Your Terminal
-
-You can deploy your new Angular project with a single command from your terminal using [Now CLI](https://zeit.co/download):
-
-```shell
-$ now
-```
+_Tolle Lege!_
