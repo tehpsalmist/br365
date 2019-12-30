@@ -19,10 +19,6 @@
     "LATER_ON_BR365_ACCESS_TOKEN": "@later-on-br365-access-token",
     "LATER_ON_BR365_HEADER_SECRET": "@later-on-br365-header-secret"
   },
-  "alias": [
-    "biblereminder365.com",
-    "biblereminder365"
-  ],
   "version": 2,
   "routes": [
     {
@@ -41,7 +37,7 @@
   "functions": {
     "api/app.ts": {
       "memory": 3008,
-      "maxDuration": 60
+      "maxDuration": 10
     }
   }
 }
