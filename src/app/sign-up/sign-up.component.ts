@@ -32,7 +32,7 @@ import { MessageService } from '../services/message.service'
 })
 export class SignUpComponent implements OnInit, OnDestroy {
   @ViewChild('signUp', { static: true }) signUpDirective: NgForm
-  @ViewChild('codeInput', { static: false }) codeInput: MatInput
+  @ViewChild('codeInput') codeInput: MatInput
 
   signUpForm: FormGroup
   translations: any[]

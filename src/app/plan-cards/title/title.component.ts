@@ -12,7 +12,7 @@ export class TitleComponent implements OnInit {
   @Input() name: string
   @Input() planName: string
   @Output() updatePlanName: EventEmitter<string> = new EventEmitter()
-  @ViewChild('control', { static: false }) myControl: MatInput
+  @ViewChild('control') myControl: MatInput
 
   form: FormGroup
 

@@ -18,7 +18,7 @@ export class UnverifiedEmailMatcher implements ErrorStateMatcher {
 export class DeliveryAddressComponent implements OnInit {
 
   @Input() email: string
-  @ViewChild('emailControl', { static: false }) control: MatInput
+  @ViewChild('emailControl') control: MatInput
   form: FormGroup
 
   @Output() updateEmail: EventEmitter<string> = new EventEmitter()

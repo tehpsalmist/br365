@@ -19,7 +19,7 @@ export class UnverifiedPhoneMatcher implements ErrorStateMatcher {
 export class DeliveryPhoneComponent implements OnInit {
   @Input() phone: string
   @Input() carrier: string
-  @ViewChild('phoneControl', { static: false }) control: MatInput
+  @ViewChild('phoneControl') control: MatInput
   form: FormGroup
 
   @Output() updatePhone: EventEmitter<{ phone: string, carrier: string }> = new EventEmitter()

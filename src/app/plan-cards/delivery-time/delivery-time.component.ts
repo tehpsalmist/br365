@@ -16,7 +16,7 @@ export class DeliveryTimeComponent implements OnInit {
   @Input() time: string
   @Input() timeZone: any
   @Output() updateTime: EventEmitter<{ time: string, timeZone: any }> = new EventEmitter()
-  @ViewChild('timeControl', { static: false }) timeControl: MatInput
+  @ViewChild('timeControl') timeControl: MatInput
 
   timeZones: any[]
 

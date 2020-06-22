@@ -13,7 +13,7 @@ export class TomorrowsReadingComponent implements OnInit {
   @Input() book: string
   @Input() chapter: number
   @Output() updateReference: EventEmitter<{ book: string, chapter: number }> = new EventEmitter()
-  @ViewChild('bookControl', { static: false }) bookControl: MatInput
+  @ViewChild('bookControl') bookControl: MatInput
 
   form: FormGroup
 

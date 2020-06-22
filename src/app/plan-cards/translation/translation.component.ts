@@ -16,7 +16,7 @@ export class TranslationComponent implements OnInit {
 
   @Input() translationCode: string
   @Output() updateTranslation: EventEmitter<{ translation: any }> = new EventEmitter()
-  @ViewChild('translationControl', { static: false }) translationControl: MatInput
+  @ViewChild('translationControl') translationControl: MatInput
 
   translation: any
   translations: any[]
