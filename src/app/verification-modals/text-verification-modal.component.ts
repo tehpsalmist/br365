@@ -1,7 +1,8 @@
 import { Router } from '@angular/router'
 import { FormControl, Validators } from '@angular/forms'
 import { Component, OnInit, Inject, ViewChild, OnDestroy } from '@angular/core'
-import { MAT_DIALOG_DATA, MatInput, MatDialogRef } from '@angular/material'
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { MatInput } from '@angular/material/input';
 import { BrApiService } from '../services/api.service'
 import { Subscription, Subject } from 'rxjs'
 import { VerificationTimerService, Clock } from '../services/verification-timer.service'

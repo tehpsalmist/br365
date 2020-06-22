@@ -1,7 +1,7 @@
 import { FormGroup, FormControl, Validators } from '@angular/forms'
 import { Component, OnInit, Input, EventEmitter, Output, ViewChild } from '@angular/core'
 import { ConstantsService } from '../../services/constants.service'
-import { MatInput } from '@angular/material'
+import { MatInput } from '@angular/material/input';
 
 @Component({
   selector: 'br365-delivery-time',

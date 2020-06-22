@@ -1,5 +1,6 @@
 import { DomSanitizer } from '@angular/platform-browser'
-import { MatIconRegistry, MatInput } from '@angular/material'
+import { MatIconRegistry } from '@angular/material/icon';
+import { MatInput } from '@angular/material/input';
 import { ConstantsService } from '../../services/constants.service'
 import { FormGroup, FormControl, Validators } from '@angular/forms'
 import { Component, OnInit, Input, Output, EventEmitter, ViewChild } from '@angular/core'

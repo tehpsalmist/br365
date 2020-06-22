@@ -1,5 +1,5 @@
 import { ConstantsService } from '../services/constants.service'
-import { MatInput } from '@angular/material'
+import { MatInput } from '@angular/material/input';
 import { BrApiService } from '../services/api.service'
 import { AuthService } from '../auth/auth.service'
 import { Component, OnInit, OnDestroy, ViewChild } from '@angular/core'

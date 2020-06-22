@@ -2,7 +2,8 @@ import { AuthService } from '../../auth/auth.service'
 import { ConstantsService } from '../../services/constants.service'
 import { CustomValidators } from '../../validators/custom.validators'
 import { FormGroup, FormControl, Validators } from '@angular/forms'
-import { MatInput, ErrorStateMatcher } from '@angular/material'
+import { ErrorStateMatcher } from '@angular/material/core';
+import { MatInput } from '@angular/material/input';
 import { Component, OnInit, EventEmitter, Input, ViewChild, Output } from '@angular/core'
 
 export class UnverifiedPhoneMatcher implements ErrorStateMatcher {

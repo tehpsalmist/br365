@@ -1,6 +1,7 @@
 import { AuthService } from '../../auth/auth.service'
 import { CustomValidators } from '../../validators/custom.validators'
-import { MatInput, ErrorStateMatcher } from '@angular/material'
+import { ErrorStateMatcher } from '@angular/material/core';
+import { MatInput } from '@angular/material/input';
 import { FormControl, Validators, FormGroup } from '@angular/forms'
 import { Component, OnInit, Input, ViewChild, Output, EventEmitter } from '@angular/core'
 

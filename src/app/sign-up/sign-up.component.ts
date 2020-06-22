@@ -9,7 +9,9 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
 import { Component, OnInit, ViewChild, OnDestroy } from '@angular/core'
 import { FormGroup, FormControl, Validators, NgForm } from '@angular/forms'
 import { ConstantsService } from '../services/constants.service'
-import { MatIconRegistry, MatDialog, MatInput } from '@angular/material'
+import { MatDialog } from '@angular/material/dialog';
+import { MatIconRegistry } from '@angular/material/icon';
+import { MatInput } from '@angular/material/input';
 import { DomSanitizer } from '@angular/platform-browser'
 import { Subscription } from 'rxjs'
 import { MessageService } from '../services/message.service'

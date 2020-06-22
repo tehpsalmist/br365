@@ -1,4 +1,4 @@
-import { MatInput } from '@angular/material'
+import { MatInput } from '@angular/material/input';
 import { FormGroup, FormControl, Validators } from '@angular/forms'
 import { ConstantsService } from '../../services/constants.service'
 import { Component, OnInit, Input, Output, EventEmitter, ViewChild } from '@angular/core'
