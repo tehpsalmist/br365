@@ -1,5 +1,4 @@
 {
-  "name": "biblereminder365",
   "env": {
     "BIBLE_EMAIL": "@br365-email",
     "MONGO_USER": "@br365-mongo-user",
