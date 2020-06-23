@@ -1,13 +1,13 @@
 import validator from 'validator'
 
-import Plans from '../models/planModel'
+import Plans from '../_models/planModel'
 
 import { verifyEmail, verifyPhone, deletePlan, getPhoneFromString, stringAndIntFromReference, referenceFromString } from './utilities'
 
-import errorEmail from '../devOps/errorEmail'
+import errorEmail from '../_devOps/errorEmail'
 
-import { bibleStructure, bibleArray, translations, timezones, carriers, months } from '../dataServices'
-import { baseUrl } from '../config'
+import { bibleStructure, bibleArray, translations, timezones, carriers, months } from '../_dataServices'
+import { baseUrl } from '../_config'
 
 import { sendEmail, sendText } from './functions/sendEmail'
 import { createTimer, updateTimer, deleteTimer } from './functions/timers'

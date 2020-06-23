@@ -1,10 +1,10 @@
 import { sendEmail, sendText } from './functions/sendEmail'
 
-import errorEmail from '../devOps/errorEmail'
+import errorEmail from '../_devOps/errorEmail'
 
 import { emailVerificationCode } from './emailComponents'
 
-import { auth0, redis } from '../config'
+import { auth0, redis } from '../_config'
 
 import { verifyEmail, verifyPhone, deletePlan, findPlansByIdentifiers, getPhoneFromString, generateCode } from './utilities'
 

@@ -1,8 +1,8 @@
 import { sendEmail } from '../functions/sendEmail'
-import errorEmail from '../../devOps/errorEmail'
+import errorEmail from '../../_devOps/errorEmail'
 import { isValidJSON } from '../utilities'
 import fetch from 'node-fetch'
-import { translations, months, bibleArray } from '../../dataServices'
+import { translations, months, bibleArray } from '../../_dataServices'
 import { visitDashboardButton, nextChapterButton } from '../emailComponents'
 
 export default function (readingArray, plan) {

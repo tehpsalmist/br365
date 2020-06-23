@@ -1,7 +1,7 @@
 import fetch from 'node-fetch'
-import errorEmail from '../devOps/errorEmail'
+import errorEmail from '../_devOps/errorEmail'
 import { isValidJSON } from './utilities'
-import { ESVBibleArray, NETBibleArray, bibleArray } from '../dataServices'
+import { ESVBibleArray, NETBibleArray, bibleArray } from '../_dataServices'
 
 const chapters = {
   esv: ESVBibleArray,

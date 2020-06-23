@@ -1,0 +1,130 @@
+{
+  "email": "bstewardcodes@gmail.com",
+  "given_name": "Ben",
+  "family_name": "Steward",
+  "picture": "https://media.licdn.com/dms/image/C4D03AQFnmXEeKMCRtQ/profile-displayphoto-shrink_100_100/0?e=1545264000&v=beta&t=5mNeq3tzXNYFVdRr2cLNKGc3hArvY2ZkWxgid2vlEgQ",
+  "name": "Ben Steward",
+  "apiStandardProfileRequest": {
+    "headers": {
+      "_total": 1,
+      "values": [
+        {
+          "name": "x-li-auth-token",
+          "value": "name:r4ej"
+        }
+      ]
+    },
+    "url": "https://api.linkedin.com/v1/people/3-MeAUGcGn"
+  },
+  "currentShare": {
+    "attribution": {
+      "share": {
+        "author": {
+          "firstName": "Johnny",
+          "id": "n0A9KlBTBH",
+          "lastName": "Reinsch"
+        },
+        "comment": "I was assigned to a senior lawyer who made my life hell.\n\nHe was brought in to the law firm to carve out a share of the tech mergers & acquisitions market.\n\nWe started with small six-figure deals.\n\nHe’d hire $1000/hour tax specialists to make sure contracts were bulletproof. And if he felt that I could have done better, he’d call me in, even on the weekend.\n\nI remember hanging up the phone in frustration multiple times. “Seriously?! NOW?!?!”\n\nBut I’d come in to the office anyway and redo my work until he was 100% satisfied.\n\nThe firm lost money.\n\nBut within a year, we were working with Fortune 100 companies on multibillion dollar contracts.\n\nAll through word of mouth.\n\nAnd zero advertising.\n\nWhat still blows me away is that our methodology for working on those nine-figure deals was IDENTICAL to those initial six-figure deals.\n\nYears later, when I founded Qwil, a freelancer financial inclusion startup, I brought that same mentality with me. Whether small or big, everything we do needs to be carried out with meticulous attention to details.\n\nThe other month we sent out $1M in freelancer advances in one day for the first time.\n\nThanks to what my mentor taught me.\n\nHis mantra:\n\n\"The way you do anything is how you do everything.\"",
+        "id": "s6458684705381453824"
+      }
+    },
+    "author": {
+      "firstName": "Ben",
+      "id": "3-MeAUGcGn",
+      "lastName": "Steward"
+    },
+    "comment": "Very happy to work for a company that has this mindset.",
+    "id": "s6397411800949813248",
+    "source": {
+      "serviceProvider": {
+        "name": "FLAGSHIP"
+      }
+    },
+    "timestamp": 1525261831512,
+    "visibility": {
+      "code": "anyone"
+    }
+  },
+  "distance": 0,
+  "headline": "Software Engineer at WizeHive",
+  "industry": "Information Technology and Services",
+  "location": {
+    "country": {
+      "code": "us"
+    },
+    "name": "Greater Philadelphia Area"
+  },
+  "numConnections": 203,
+  "numConnectionsCapped": false,
+  "pictureUrls": {
+    "_total": 1,
+    "values": [
+      "https://media.licdn.com/dms/image/C4D00AQFEhh1M_hAGlw/profile-originalphoto-shrink_900_1200/0?e=1540015200&v=beta&t=hiizapUMXkaTfmu6tRhkxa2G0LkGJww24WmuJGZe8SQ"
+    ]
+  },
+  "positions": {
+    "_total": 1,
+    "values": [
+      {
+        "company": {
+          "id": 628962,
+          "industry": "Information Technology & Services",
+          "name": "WizeHive",
+          "size": "11-50",
+          "type": "Privately Held"
+        },
+        "id": 1362632734,
+        "isCurrent": true,
+        "location": {
+          "name": "Conshohocken, PA"
+        },
+        "startDate": {
+          "month": 7,
+          "year": 2018
+        },
+        "title": "Software Engineer"
+      }
+    ]
+  },
+  "publicProfileUrl": "http://www.linkedin.com/in/bstewardcodes",
+  "relationToViewer": {
+    "distance": 0
+  },
+  "siteStandardProfileRequest": {
+    "url": "https://www.linkedin.com/profile/view?id=AAoAAAW9PicBahQkG46DqmWJuEUg2CWBS8oUDxQ&authType=name&authToken=r4ej&trk=api*a5220183*s5098963*"
+  },
+  "summary": "Full Stack Developer with skills in REST APIs, Angular (2-6 +Material), RethinkDB, MongoDB,  jQuery, Bootstrap, Tailwind CSS, Node.js, Express, Bash, HTML5 Canvas, and KnockoutJS. Passionate about learning, teamwork, and creating awesome user experiences.",
+  "email_verified": true,
+  "updated_at": "2018-10-19T05:36:40.882Z",
+  "user_id": "linkedin|3-MeAUGcGn",
+  "nickname": "bstewardcodes",
+  "identities": [
+    {
+      "access_token": "AQV5ThbCTzLEfjNMrlYj9Pdafxs7SBx8EVHN98itVizRB03RoZgRSnRKVIQE5DgliZ3CQb8WQJWPgkgWRqcrYl5s6ybqxdSUZAD9y_olYkwkGjklIsHuZv5YiIlZYzZcSxMEiZJuglTC5Zvu1W_3Za3kciVNs0hE78Fiw11TAm6bBQyMky35ar81B2WakpFz0BA1rn-ImrYDPeCykSZLtR-SLxr2tAIOVukj9kiTXJA_QCGY3T2TMsEGVDZwbEtA8eQECgLSYpWwzuG5sJW8FZRzCHlnYvYC0DJcjNdiRdx67kYP5sodgYSKZPdDAytbJwK6g-ZFL0gupKx1l7476g4SpyuByg",
+      "provider": "linkedin",
+      "user_id": "3-MeAUGcGn",
+      "connection": "linkedin",
+      "isSocial": true
+    }
+  ],
+  "created_at": "2018-08-06T04:35:50.007Z",
+  "user_metadata": {
+    "emails": [
+      {
+        "email": "ronyfan103@gmail.com",
+        "verified": false
+      },
+      {
+        "email": "ronyfan102@gmail.com",
+        "verified": false
+      },
+      {
+        "email": "bstewardcodes@gmail.com",
+        "verified": true
+      }
+    ]
+  },
+  "last_ip": "108.52.19.251",
+  "last_login": "2018-10-19T05:36:40.650Z",
+  "logins_count": 6
+}

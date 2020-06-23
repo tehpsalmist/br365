@@ -1,8 +1,8 @@
 import fetch from 'node-fetch'
 import { sendEmail } from '../functions/sendEmail'
-import { months, books, translations, bibleArray } from '../../dataServices'
+import { months, books, translations, bibleArray } from '../../_dataServices'
 import { visitDashboardButton, nextChapterButton } from '../emailComponents'
-import errorEmail from '../../devOps/errorEmail'
+import errorEmail from '../../_devOps/errorEmail'
 import { reduceReferenceStringToObject } from '../utilities'
 
 const { ESV_API_TOKEN } = process.env

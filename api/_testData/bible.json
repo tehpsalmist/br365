@@ -1,0 +1,940 @@
+[
+  {
+    "book": [
+      {
+        "book_ref": "Mi",
+        "book_name": "Micah",
+        "book_nr": "33",
+        "chapter_nr": "6",
+        "chapter": {
+          "1": {
+            "verse_nr": "1",
+            "verse": "Hear ye now what Jehovah saith: Arise, contend thou before the mountains, and let the hills hear thy voice.\\r\\n"
+          },
+          "2": {
+            "verse_nr": 2,
+            "verse": "Hear, O ye mountains, Jehovah's controversy, and ye enduring foundations of the earth; for Jehovah hath a controversy with his people, and he will contend with Israel.\\r\\n"
+          },
+          "3": {
+            "verse_nr": 3,
+            "verse": "O my people, what have I done unto thee? and wherein have I wearied thee? testify against me.\\r\\n"
+          },
+          "4": {
+            "verse_nr": 4,
+            "verse": "For I brought thee up out of the land of Egypt, and redeemed thee out of the house of bondage; and I sent before thee Moses, Aaron, and Miriam.\\r\\n"
+          },
+          "5": {
+            "verse_nr": 5,
+            "verse": "O my people, remember now what Balak king of Moab devised, and what Balaam the son of Beor answered him; [remember] from Shittim unto Gilgal, that ye may know the righteous acts of Jehovah.\\r\\n"
+          },
+          "6": {
+            "verse_nr": 6,
+            "verse": "Wherewith shall I come before Jehovah, and bow myself before the high God? shall I come before him with burnt-offerings, with calves a year old?\\r\\n"
+          },
+          "7": {
+            "verse_nr": 7,
+            "verse": "will Jehovah be pleased with thousands of rams, [or] with ten thousands of rivers of oil? shall I give my first-born for my transgression, the fruit of my body for the sin of my soul?\\r\\n"
+          },
+          "8": {
+            "verse_nr": 8,
+            "verse": "He hath showed thee, O man, what is good; and what doth Jehovah require of thee, but to do justly, and to love kindness, and to walk humbly with thy God?\\r\\n"
+          },
+          "9": {
+            "verse_nr": 9,
+            "verse": "The voice of Jehovah crieth unto the city, and [the man of] wisdom will see thy name: hear ye the rod, and who hath appointed it.\\r\\n"
+          },
+          "10": {
+            "verse_nr": 10,
+            "verse": "Are there yet treasures of wickedness in the house of the wicked, and a scant measure that is abominable?\\r\\n"
+          },
+          "11": {
+            "verse_nr": 11,
+            "verse": "Shall I be pure with wicked balances, and with a bag of deceitful weights?\\r\\n"
+          },
+          "12": {
+            "verse_nr": 12,
+            "verse": "For the rich men thereof are full of violence, and the inhabitants thereof have spoken lies, and their tongue is deceitful in their mouth.\\r\\n"
+          },
+          "13": {
+            "verse_nr": 13,
+            "verse": "Therefore I also have smitten thee with a grievous wound; I have made thee desolate because of thy sins.\\r\\n"
+          },
+          "14": {
+            "verse_nr": 14,
+            "verse": "Thou shalt eat, but not be satisfied; and thy humiliation shall be in the midst of thee: and thou shalt put away, but shalt not save; and that which thou savest will I give up to the sword.\\r\\n"
+          },
+          "15": {
+            "verse_nr": 15,
+            "verse": "Thou shalt sow, but shalt not reap; thou shalt tread the olives, but shalt not anoint thee with oil; and the vintage, but shalt not drink the wine.\\r\\n"
+          },
+          "16": {
+            "verse_nr": 16,
+            "verse": "For the statutes of Omri are kept, and all the works of the house of Ahab, and ye walk in their counsels; that I may make thee a desolation, and the inhabitants thereof a hissing: and ye shall bear the reproach of my people.\\r\\n"
+          }
+        }
+      },
+      {
+        "book_ref": "Mi",
+        "book_name": "Micah",
+        "book_nr": "33",
+        "chapter_nr": "7",
+        "chapter": {
+          "1": {
+            "verse_nr": "1",
+            "verse": "Woe is me! for I am as when they have gathered the summer fruits, as the grape gleanings of the vintage: there is no cluster to eat; my soul desireth the first-ripe fig.\\r\\n"
+          },
+          "2": {
+            "verse_nr": 2,
+            "verse": "The godly man is perished out of the earth, and there is none upright among men: they all lie in wait for blood; they hunt every man his brother with a net.\\r\\n"
+          },
+          "3": {
+            "verse_nr": 3,
+            "verse": "Their hands are upon that which is evil to do it diligently; the prince asketh, and the judge [is ready] for a reward; and the great man, he uttereth the evil desire of his soul: thus they weave it together.\\r\\n"
+          },
+          "4": {
+            "verse_nr": 4,
+            "verse": "The best of them is as a brier; the most upright is [worse] than a thorn hedge: the day of thy watchmen, even thy visitation, is come; now shall be their perplexity.\\r\\n"
+          },
+          "5": {
+            "verse_nr": 5,
+            "verse": "Trust ye not in a neighbor; put ye not confidence in a friend; keep the doors of thy mouth from her that lieth in thy bosom.\\r\\n"
+          },
+          "6": {
+            "verse_nr": 6,
+            "verse": "For the son dishonoreth the father, the daughter riseth up against her mother, the daughter-in-law against her mother-in-law; a man's enemies are the men of his own house.\\r\\n"
+          },
+          "7": {
+            "verse_nr": 7,
+            "verse": "But as for me, I will look unto Jehovah; I will wait for the God of my salvation: my God will hear me.\\r\\n"
+          },
+          "8": {
+            "verse_nr": 8,
+            "verse": "Rejoice not against me, O mine enemy: when I fall, I shall arise; when I sit in darkness, Jehovah will be a light unto me.\\r\\n"
+          },
+          "9": {
+            "verse_nr": 9,
+            "verse": "I will bear the indignation of Jehovah, because I have sinned against him, until he plead my cause, and execute judgment for me: he will bring me forth to the light, [and] I shall behold his righteousness.\\r\\n"
+          },
+          "10": {
+            "verse_nr": 10,
+            "verse": "Then mine enemy shall see it, and shame shall cover her who said unto me, Where is Jehovah thy God? Mine eyes shall see [my desire] upon her; now shall she be trodden down as the mire of the streets.\\r\\n"
+          },
+          "11": {
+            "verse_nr": 11,
+            "verse": "A day for building thy walls! in that day shall the decree be far removed.\\r\\n"
+          },
+          "12": {
+            "verse_nr": 12,
+            "verse": "In that day shall they come unto thee from Assyria and the cities of Egypt, and from Egypt even to the River, and from sea to sea, and [from] mountain to mountain.\\r\\n"
+          },
+          "13": {
+            "verse_nr": 13,
+            "verse": "Yet shall the land be desolate because of them that dwell therein, for the fruit of their doings.\\r\\n"
+          },
+          "14": {
+            "verse_nr": 14,
+            "verse": "Feed thy people with thy rod, the flock of thy heritage, which dwell solitarily, in the forest in the midst of Carmel: let them feed in Bashan and Gilead, as in the days of old.\\r\\n"
+          },
+          "15": {
+            "verse_nr": 15,
+            "verse": "As in the days of thy coming forth out of the land of Egypt will I show unto them marvellous things.\\r\\n"
+          },
+          "16": {
+            "verse_nr": 16,
+            "verse": "The nations shall see and be ashamed of all their might; they shall lay their hand upon their mouth; their ears shall be deaf.\\r\\n"
+          },
+          "17": {
+            "verse_nr": 17,
+            "verse": "They shall lick the dust like a serpent; like crawling things of the earth they shall come trembling out of their close places; they shall come with fear unto Jehovah our God, and shall be afraid because of thee.\\r\\n"
+          },
+          "18": {
+            "verse_nr": 18,
+            "verse": "Who is a God like unto thee, that pardoneth iniquity, and passeth over the transgression of the remnant of his heritage? he retaineth not his anger for ever, because he delighteth in lovingkindness.\\r\\n"
+          },
+          "19": {
+            "verse_nr": 19,
+            "verse": "He will again have compassion upon us; he will tread our iniquities under foot; and thou wilt cast all their sins into the depths of the sea.\\r\\n"
+          },
+          "20": {
+            "verse_nr": 20,
+            "verse": "Thou wilt perform the truth to Jacob, [and] the lovingkindness to Abraham, which thou hast sworn unto our fathers from the days of old. \\r\\n"
+          }
+        }
+      },
+      {
+        "book_ref": "Na",
+        "book_name": "Nahum",
+        "book_nr": "34",
+        "chapter_nr": "1",
+        "chapter": {
+          "1": {
+            "verse_nr": "1",
+            "verse": "The burden of Nineveh. The book of the vision of Nahum the Elkoshite.\\r\\n"
+          },
+          "2": {
+            "verse_nr": 2,
+            "verse": "Jehovah is a jealous God and avengeth; Jehovah avengeth and is full of wrath; Jehovah taketh vengeance on his adversaries, and he reserveth [wrath] for his enemies.\\r\\n"
+          },
+          "3": {
+            "verse_nr": 3,
+            "verse": "Jehovah is slow to anger, and great in power, and will by no means clear [the guilty]: Jehovah hath his way in the whirlwind and in the storm, and the clouds are the dust of his feet.\\r\\n"
+          },
+          "4": {
+            "verse_nr": 4,
+            "verse": "He rebuketh the sea, and maketh it dry, and drieth up all the rivers: Bashan languisheth, and Carmel; and the flower of Lebanon languisheth.\\r\\n"
+          },
+          "5": {
+            "verse_nr": 5,
+            "verse": "The mountains quake at him, and the hills melt; and the earth is upheaved at his presence, yea, the world, and all that dwell therein.\\r\\n"
+          },
+          "6": {
+            "verse_nr": 6,
+            "verse": "Who can stand before his indignation? and who can abide in the fierceness of his anger? his wrath is poured out like fire, and the rocks are broken asunder by him.\\r\\n"
+          },
+          "7": {
+            "verse_nr": 7,
+            "verse": "Jehovah is good, a stronghold in the day of trouble; and he knoweth them that take refuge in him.\\r\\n"
+          },
+          "8": {
+            "verse_nr": 8,
+            "verse": "But with an over-running flood he will make a full end of her place, and will pursue his enemies into darkness.\\r\\n"
+          },
+          "9": {
+            "verse_nr": 9,
+            "verse": "What do ye devise against Jehovah? he will make a full end; affliction shall not rise up the second time.\\r\\n"
+          },
+          "10": {
+            "verse_nr": 10,
+            "verse": "For entangled like thorns, and drunken as with their drink, they are consumed utterly as dry stubble.\\r\\n"
+          },
+          "11": {
+            "verse_nr": 11,
+            "verse": "There is one gone forth out of thee, that deviseth evil against Jehovah, that counselleth wickedness.\\r\\n"
+          },
+          "12": {
+            "verse_nr": 12,
+            "verse": "Thus saith Jehovah: Though they be in full strength, and likewise many, even so shall they be cut down, and he shall pass away. Though I have afflicted thee, I will afflict thee no more.\\r\\n"
+          },
+          "13": {
+            "verse_nr": 13,
+            "verse": "And now will I break his yoke from off thee, and will burst thy bonds in sunder.\\r\\n"
+          },
+          "14": {
+            "verse_nr": 14,
+            "verse": "And Jehovah hath given commandment concerning thee, that no more of thy name be sown: out of the house of thy gods will I cut off the graven image and the molten image; I will make thy grave; for thou art vile.\\r\\n"
+          },
+          "15": {
+            "verse_nr": 15,
+            "verse": "Behold, upon the mountains the feet of him that bringeth good tidings, that publisheth peace! Keep thy feasts, O Judah, perform thy vows; for the wicked one shall no more pass through thee; he is utterly cut off.\\r\\n"
+          }
+        }
+      },
+      {
+        "book_ref": "Na",
+        "book_name": "Nahum",
+        "book_nr": "34",
+        "chapter_nr": "2",
+        "chapter": {
+          "1": {
+            "verse_nr": "1",
+            "verse": "He that dasheth in pieces is come up against thee: keep the fortress, watch the way, make thy loins strong, fortify thy power mightily.\\r\\n"
+          },
+          "2": {
+            "verse_nr": 2,
+            "verse": "For Jehovah restoreth the excellency of Jacob, as the excellency of Israel; for the emptiers have emptied them out, and destroyed their vine-branches.\\r\\n"
+          },
+          "3": {
+            "verse_nr": 3,
+            "verse": "The shield of his mighty men is made red, the valiant men are in scarlet: the chariots flash with steel in the day of his preparation, and the cypress [spears] are brandished.\\r\\n"
+          },
+          "4": {
+            "verse_nr": 4,
+            "verse": "The chariots rage in the streets; they rush to and fro in the broad ways: the appearance of them is like torches; they run like the lightnings.\\r\\n"
+          },
+          "5": {
+            "verse_nr": 5,
+            "verse": "He remembereth his nobles: they stumble in their march; they make haste to the wall thereof, and the mantelet is prepared.\\r\\n"
+          },
+          "6": {
+            "verse_nr": 6,
+            "verse": "The gates of the rivers are opened, and the palace is dissolved.\\r\\n"
+          },
+          "7": {
+            "verse_nr": 7,
+            "verse": "And it is decreed: she is uncovered, she is carried away; and her handmaids moan as with the voice of doves, beating upon their breasts.\\r\\n"
+          },
+          "8": {
+            "verse_nr": 8,
+            "verse": "But Nineveh hath been from of old like a pool of water: yet they flee away. Stand, stand, [they cry]; but none looketh back.\\r\\n"
+          },
+          "9": {
+            "verse_nr": 9,
+            "verse": "Take ye the spoil of silver, take the spoil of gold; for there is no end of the store, the glory of all goodly furniture.\\r\\n"
+          },
+          "10": {
+            "verse_nr": 10,
+            "verse": "She is empty, and void, and waste; and the heart melteth, and the knees smite together, and anguish is in all loins, and the faces of them all are waxed pale.\\r\\n"
+          },
+          "11": {
+            "verse_nr": 11,
+            "verse": "Where is the den of the lions, and the feeding-place of the young lions, where the lion [and] the lioness walked, the lion's whelp, and none made them afraid?\\r\\n"
+          },
+          "12": {
+            "verse_nr": 12,
+            "verse": "The lion did tear in pieces enough for his whelps, and strangled for his lionesses, and filled his caves with prey, and his dens with ravin.\\r\\n"
+          },
+          "13": {
+            "verse_nr": 13,
+            "verse": "Behold, I am against thee, saith Jehovah of hosts, and I will burn her chariots in the smoke, and the sword shall devour thy young lions; and I will cut off thy prey from the earth, and the voice of thy messengers shall no more be heard.\\r\\n"
+          }
+        }
+      },
+      {
+        "book_ref": "Na",
+        "book_name": "Nahum",
+        "book_nr": "34",
+        "chapter_nr": "3",
+        "chapter": {
+          "1": {
+            "verse_nr": "1",
+            "verse": "Woe to the bloody city! it is all full of lies and rapine; the prey departeth not.\\r\\n"
+          },
+          "2": {
+            "verse_nr": 2,
+            "verse": "The noise of the whip, and the noise of the rattling of wheels, and prancing horses, and bounding chariots,\\r\\n"
+          },
+          "3": {
+            "verse_nr": 3,
+            "verse": "the horseman mounting, and the flashing sword, and the glittering spear, and a multitude of slain, and a great heap of corpses, and there is no end of the bodies; they stumble upon their bodies;-\\r\\n"
+          },
+          "4": {
+            "verse_nr": 4,
+            "verse": "because of the multitude of the whoredoms of the well-favored harlot, the mistress of witchcrafts, that selleth nations through her whoredoms, and families through her witchcrafts.\\r\\n"
+          },
+          "5": {
+            "verse_nr": 5,
+            "verse": "Behold, I am against thee, saith Jehovah of hosts, and I will uncover thy skirts upon thy face; and I will show the nations thy nakedness, and the kingdoms thy shame.\\r\\n"
+          },
+          "6": {
+            "verse_nr": 6,
+            "verse": "And I will cast abominable filth upon thee, and make thee vile, and will set thee as a gazing-stock.\\r\\n"
+          },
+          "7": {
+            "verse_nr": 7,
+            "verse": "And it shall come to pass, that all they that look upon thee shall flee from thee, and say, Nineveh is laid waste: who will bemoan her? whence shall I seek comforters for thee?\\r\\n"
+          },
+          "8": {
+            "verse_nr": 8,
+            "verse": "Art thou better than No-amon, that was situate among the rivers, that had the waters round about her; whose rampart was the sea,[and] her wall was of the sea?\\r\\n"
+          },
+          "9": {
+            "verse_nr": 9,
+            "verse": "Ethiopia and Egypt were her strength, and it was infinite; Put and Lubim were thy helpers.\\r\\n"
+          },
+          "10": {
+            "verse_nr": 10,
+            "verse": "Yet was she carried away, she went into captivity; her young children also were dashed in pieces at the head of all the streets; and they cast lots for her honorable men, and all her great men were bound in chains.\\r\\n"
+          },
+          "11": {
+            "verse_nr": 11,
+            "verse": "Thou also shalt be drunken; thou shalt be hid; thou also shalt seek a stronghold because of the enemy.\\r\\n"
+          },
+          "12": {
+            "verse_nr": 12,
+            "verse": "All thy fortresses shall be [like] fig-trees with the first-ripe figs: if they be shaken, they fall into the mouth of the eater.\\r\\n"
+          },
+          "13": {
+            "verse_nr": 13,
+            "verse": "Behold, thy people in the midst of thee are women; the gates of thy land are set wide open unto thine enemies: the fire hath devoured thy bars.\\r\\n"
+          },
+          "14": {
+            "verse_nr": 14,
+            "verse": "Draw thee water for the siege; strengthen thy fortresses; go into the clay, and tread the mortar; make strong the brickkiln.\\r\\n"
+          },
+          "15": {
+            "verse_nr": 15,
+            "verse": "There shall the fire devour thee; the sword shall cut thee off; it shall devour thee like the canker-worm: make thyself many as the canker-worm; make thyself many as the locust.\\r\\n"
+          },
+          "16": {
+            "verse_nr": 16,
+            "verse": "Thou hast multiplied thy merchants above the stars of heaven: the canker-worm ravageth, and fleeth away.\\r\\n"
+          },
+          "17": {
+            "verse_nr": 17,
+            "verse": "Thy princes are as the locusts, and thy marshals as the swarms of grasshoppers, which encamp in the hedges in the cold day, but when the sun ariseth they flee away, and their place is not known where they are.\\r\\n"
+          },
+          "18": {
+            "verse_nr": 18,
+            "verse": "Thy shepherds slumber, O king of Assyria; thy nobles are at rest; thy people are scattered upon the mountains, and there is none to gather them.\\r\\n"
+          },
+          "19": {
+            "verse_nr": 19,
+            "verse": "There is no assuaging of thy hurt: thy wound is grievous: all that hear the report of thee clap their hands over thee; for upon whom hath not thy wickedness passed continually? \\r\\n"
+          }
+        }
+      },
+      {
+        "book_ref": "Ha",
+        "book_name": "Habakkuk",
+        "book_nr": "35",
+        "chapter_nr": "1",
+        "chapter": {
+          "1": {
+            "verse_nr": "1",
+            "verse": "The burden which Habakkuk the prophet did see.\\r\\n"
+          },
+          "2": {
+            "verse_nr": 2,
+            "verse": "O Jehovah, how long shall I cry, and thou wilt not hear? I cry out unto thee of violence, and thou wilt not save.\\r\\n"
+          },
+          "3": {
+            "verse_nr": 3,
+            "verse": "Why dost thou show me iniquity, and look upon perverseness? for destruction and violence are before me; and there is strife, and contention riseth up.\\r\\n"
+          },
+          "4": {
+            "verse_nr": 4,
+            "verse": "Therefore the law is slacked, and justice doth never go forth; for the wicked doth compass about the righteous; therefore justice goeth forth perverted.\\r\\n"
+          },
+          "5": {
+            "verse_nr": 5,
+            "verse": "Behold ye among the nations, and look, and wonder marvellously; for I am working a work in your days, which ye will not believe though it be told you.\\r\\n"
+          },
+          "6": {
+            "verse_nr": 6,
+            "verse": "For, lo, I raise up the Chaldeans, that bitter and hasty nation, that march through the breadth of the earth, to possess dwelling-places that are not theirs.\\r\\n"
+          },
+          "7": {
+            "verse_nr": 7,
+            "verse": "They are terrible and dreadful; their judgment and their dignity proceed from themselves.\\r\\n"
+          },
+          "8": {
+            "verse_nr": 8,
+            "verse": "Their horses also are swifter than leopards, and are more fierce than the evening wolves; and their horsemen press proudly on: yea, their horsemen come from far; they fly as an eagle that hasteth to devour.\\r\\n"
+          },
+          "9": {
+            "verse_nr": 9,
+            "verse": "They come all of them for violence; the set of their faces is forwards; and they gather captives as the sand.\\r\\n"
+          },
+          "10": {
+            "verse_nr": 10,
+            "verse": "Yea, he scoffeth at kings, and princes are a derision unto him; he derideth every stronghold; for he heapeth up dust, and taketh it.\\r\\n"
+          },
+          "11": {
+            "verse_nr": 11,
+            "verse": "Then shall he sweep by [as] a wind, and shall pass over, and be guilty,[even] he whose might is his god.\\r\\n"
+          },
+          "12": {
+            "verse_nr": 12,
+            "verse": "Art not thou from everlasting, O Jehovah my God, my Holy One? we shall not die. O Jehovah, thou hast ordained him for judgment; and thou, O Rock, hast established him for correction.\\r\\n"
+          },
+          "13": {
+            "verse_nr": 13,
+            "verse": "Thou that art of purer eyes than to behold evil, and that canst not look on perverseness, wherefore lookest thou upon them that deal treacherously, and holdest thy peace when the wicked swalloweth up the man that is more righteous than he;\\r\\n"
+          },
+          "14": {
+            "verse_nr": 14,
+            "verse": "and makest men as the fishes of the sea, as the creeping things, that have no ruler over them?\\r\\n"
+          },
+          "15": {
+            "verse_nr": 15,
+            "verse": "He taketh up all of them with the angle, he catcheth them in his net, and gathereth them in his drag: therefore he rejoiceth and is glad.\\r\\n"
+          },
+          "16": {
+            "verse_nr": 16,
+            "verse": "Therefore he sacrificeth unto his net, and burneth incense unto his drag; because by them his portion is fat, and his food plenteous.\\r\\n"
+          },
+          "17": {
+            "verse_nr": 17,
+            "verse": "Shall he therefore empty his net, and spare not to slay the nations continually?\\r\\n"
+          }
+        }
+      }
+    ],
+    "direction": "LTR",
+    "type": "verse",
+    "version": "asv"
+  },
+  {
+    "book": [
+      {
+        "book_ref": "Ha",
+        "book_name": "Habakkuk",
+        "book_nr": "35",
+        "chapter_nr": "2",
+        "chapter": {
+          "1": {
+            "verse_nr": "1",
+            "verse": "I will stand upon my watch, and set me upon the tower, and will look forth to see what he will speak with me, and what I shall answer concerning my complaint.\\r\\n"
+          },
+          "2": {
+            "verse_nr": 2,
+            "verse": "And Jehovah answered me, and said, Write the vision, and make it plain upon tablets, that he may run that readeth it.\\r\\n"
+          },
+          "3": {
+            "verse_nr": 3,
+            "verse": "For the vision is yet for the appointed time, and it hasteth toward the end, and shall not lie: though it tarry, wait for it; because it will surely come, it will not delay.\\r\\n"
+          },
+          "4": {
+            "verse_nr": 4,
+            "verse": "Behold, his soul is puffed up, it is not upright in him; but the righteous shall live by his faith.\\r\\n"
+          },
+          "5": {
+            "verse_nr": 5,
+            "verse": "Yea, moreover, wine is treacherous, a haughty man, that keepeth not at home; who enlargeth his desire as Sheol, and he is as death, and cannot be satisfied, but gathereth unto him all nations, and heapeth unto him all peoples.\\r\\n"
+          },
+          "6": {
+            "verse_nr": 6,
+            "verse": "Shall not all these take up a parable against him, and a taunting proverb against him, and say, Woe to him that increaseth that which is not his! how long? and that ladeth himself with pledges!\\r\\n"
+          },
+          "7": {
+            "verse_nr": 7,
+            "verse": "Shall they not rise up suddenly that shall bite thee, and awake that shall vex thee, and thou shalt be for booty unto them?\\r\\n"
+          },
+          "8": {
+            "verse_nr": 8,
+            "verse": "Because thou hast plundered many nations, all the remnant of the peoples shall plunder thee, because of men's blood, and for the violence done to the land, to the city and to all that dwell therein.\\r\\n"
+          },
+          "9": {
+            "verse_nr": 9,
+            "verse": "Woe to him that getteth an evil gain for his house, that he may set his nest on high, that he may be delivered from the hand of evil!\\r\\n"
+          },
+          "10": {
+            "verse_nr": 10,
+            "verse": "Thou hast devised shame to thy house, by cutting off many peoples, and hast sinned against thy soul.\\r\\n"
+          },
+          "11": {
+            "verse_nr": 11,
+            "verse": "For the stone shall cry out of the wall, and the beam out of the timber shall answer it.\\r\\n"
+          },
+          "12": {
+            "verse_nr": 12,
+            "verse": "Woe to him that buildeth a town with blood, and establisheth a city by iniquity!\\r\\n"
+          },
+          "13": {
+            "verse_nr": 13,
+            "verse": "Behold, is it not of Jehovah of hosts that the peoples labor for the fire, and the nations weary themselves for vanity?\\r\\n"
+          },
+          "14": {
+            "verse_nr": 14,
+            "verse": "For the earth shall be filled with the knowledge of the glory of Jehovah, as the waters cover the sea.\\r\\n"
+          },
+          "15": {
+            "verse_nr": 15,
+            "verse": "Woe unto him that giveth his neighbor drink, [to thee] that addest thy venom, and makest him drunken also, that thou mayest look on their nakedness!\\r\\n"
+          },
+          "16": {
+            "verse_nr": 16,
+            "verse": "Thou art filled with shame, and not glory: drink thou also, and be as one uncircumcised; the cup of Jehovah's right hand shall come round unto thee, and foul shame shall be upon thy glory.\\r\\n"
+          },
+          "17": {
+            "verse_nr": 17,
+            "verse": "For the violence done to Lebanon shall cover thee, and the destruction of the beasts, which made them afraid; because of men's blood, and for the violence done to the land, to the city and to all that dwell therein.\\r\\n"
+          },
+          "18": {
+            "verse_nr": 18,
+            "verse": "What profiteth the graven image, that the maker thereof hath graven it; the molten image, even the teacher of lies, that he that fashioneth its form trusteth therein, to make dumb idols?\\r\\n"
+          },
+          "19": {
+            "verse_nr": 19,
+            "verse": "Woe unto him that saith to the wood, Awake; to the dumb stone, Arise! Shall this teach? Behold, it is overlaid with gold and silver, and there is no breath at all in the midst of it.\\r\\n"
+          },
+          "20": {
+            "verse_nr": 20,
+            "verse": "But Jehovah is in his holy temple: let all the earth keep silence before him.\\r\\n"
+          }
+        }
+      },
+      {
+        "book_ref": "Ha",
+        "book_name": "Habakkuk",
+        "book_nr": "35",
+        "chapter_nr": "3",
+        "chapter": {
+          "1": {
+            "verse_nr": "1",
+            "verse": "A prayer of Habakkuk the prophet, set to Shigionoth.\\r\\n"
+          },
+          "2": {
+            "verse_nr": 2,
+            "verse": "O Jehovah, I have heard the report of thee, and am afraid: O Jehovah, revive thy work in the midst of the years; In the midst of the years make it known; In wrath remember mercy.\\r\\n"
+          },
+          "3": {
+            "verse_nr": 3,
+            "verse": "God came from Teman, And the Holy One from mount Paran. Selah. His glory covered the heavens, And the earth was full of his praise.\\r\\n"
+          },
+          "4": {
+            "verse_nr": 4,
+            "verse": "And [his] brightness was as the light; He had rays [coming forth] from his hand; And there was the hiding of his power.\\r\\n"
+          },
+          "5": {
+            "verse_nr": 5,
+            "verse": "Before him went the pestilence, And fiery bolts went forth at his feet.\\r\\n"
+          },
+          "6": {
+            "verse_nr": 6,
+            "verse": "He stood, and measured the earth; He beheld, and drove asunder the nations; And the eternal mountains were scattered; The everlasting hills did bow; His goings were [as] of old.\\r\\n"
+          },
+          "7": {
+            "verse_nr": 7,
+            "verse": "I saw the tents of Cushan in affliction; The curtains of the land of Midian did tremble.\\r\\n"
+          },
+          "8": {
+            "verse_nr": 8,
+            "verse": "Was Jehovah displeased with the rivers? Was thine anger against the rivers, Or thy wrath against the sea, That thou didst ride upon thy horses, Upon thy chariots of salvation?\\r\\n"
+          },
+          "9": {
+            "verse_nr": 9,
+            "verse": "Thy bow was made quite bare; The oaths to the tribes were a [sure] word. Selah. Thou didst cleave the earth with rivers.\\r\\n"
+          },
+          "10": {
+            "verse_nr": 10,
+            "verse": "The mountains saw thee, and were afraid; The tempest of waters passed by; The deep uttered its voice, And lifted up its hands on high.\\r\\n"
+          },
+          "11": {
+            "verse_nr": 11,
+            "verse": "The sun and moon stood still in their habitation, At the light of thine arrows as they went, At the shining of thy glittering spear.\\r\\n"
+          },
+          "12": {
+            "verse_nr": 12,
+            "verse": "Thou didst march though the land in indignation; Thou didst thresh the nations in anger.\\r\\n"
+          },
+          "13": {
+            "verse_nr": 13,
+            "verse": "Thou wentest forth for the salvation of thy people, For the salvation of thine anointed; Thou woundest the head out of the house of the wicked man, Laying bare the foundation even unto the neck. Selah.\\r\\n"
+          },
+          "14": {
+            "verse_nr": 14,
+            "verse": "Thou didst pierce with his own staves the head of his warriors: They came as a whirlwind to scatter me; Their rejoicing was as to devour the poor secretly.\\r\\n"
+          },
+          "15": {
+            "verse_nr": 15,
+            "verse": "Thou didst tread the sea with thy horses, The heap of mighty waters.\\r\\n"
+          },
+          "16": {
+            "verse_nr": 16,
+            "verse": "I heard, and my body trembled, My lips quivered at the voice; Rottenness entereth into my bones, and I tremble in my place; Because I must wait quietly for the day of trouble, For the coming up of the people that invadeth us.\\r\\n"
+          },
+          "17": {
+            "verse_nr": 17,
+            "verse": "For though the fig-tree shall not flourish, Neither shall fruit be in the vines; The labor of the olive shall fail, And the fields shall yield no food; The flock shall be cut off from the fold, And there shall be no herd in the stalls:\\r\\n"
+          },
+          "18": {
+            "verse_nr": 18,
+            "verse": "Yet I will rejoice in Jehovah, I will joy in the God of my salvation.\\r\\n"
+          },
+          "19": {
+            "verse_nr": 19,
+            "verse": "Jehovah, the Lord, is my strength; And he maketh my feet like hinds' [feet], And will make me to walk upon my high places. \\r\\n"
+          }
+        }
+      },
+      {
+        "book_ref": "Zeph",
+        "book_name": "Zephaniah",
+        "book_nr": "36",
+        "chapter_nr": "1",
+        "chapter": {
+          "1": {
+            "verse_nr": "1",
+            "verse": "The word of Jehovah which came unto Zephaniah the son of Cushi, the son of Gedaliah, the son of Amariah, the son of Hezekiah, in the days of Josiah the son of Amon, king of Judah.\\r\\n"
+          },
+          "2": {
+            "verse_nr": 2,
+            "verse": "I will utterly consume all things from off the face of the ground, saith Jehovah.\\r\\n"
+          },
+          "3": {
+            "verse_nr": 3,
+            "verse": "I will consume man and beast; I will consume the birds of the heavens, and the fishes of the sea, and the stumblingblocks with the wicked; and I will cut off man from off the face of the ground, saith Jehovah.\\r\\n"
+          },
+          "4": {
+            "verse_nr": 4,
+            "verse": "And I will stretch out my hand upon Judah, and upon all the inhabitants of Jerusalem; and I will cut off the remnant of Baal from this place,[and] the name of the Chemarim with the priests;\\r\\n"
+          },
+          "5": {
+            "verse_nr": 5,
+            "verse": "and them that worship the host of heaven upon the housetops; and them that worship, that swear to Jehovah and swear by Malcam;\\r\\n"
+          },
+          "6": {
+            "verse_nr": 6,
+            "verse": "and them that are turned back from following Jehovah; and those that have not sought Jehovah, nor inquired after him.\\r\\n"
+          },
+          "7": {
+            "verse_nr": 7,
+            "verse": "Hold thy peace at the presence of the Lord Jehovah; for the day of Jehovah is at hand: for Jehovah hath prepared a sacrifice, he hath consecrated his guests.\\r\\n"
+          },
+          "8": {
+            "verse_nr": 8,
+            "verse": "And it shall come to pass in the day of Jehovah's sacrifice, that I will punish the princes, and the king's sons, and all such as are clothed with foreign apparel.\\r\\n"
+          },
+          "9": {
+            "verse_nr": 9,
+            "verse": "And in that day I will punish all those that leap over the threshold, that fill their master's house with violence and deceit.\\r\\n"
+          },
+          "10": {
+            "verse_nr": 10,
+            "verse": "And in that day, saith Jehovah, there shall be the noise of a cry from the fish gate, and a wailing from the second quarter, and a great crashing from the hills.\\r\\n"
+          },
+          "11": {
+            "verse_nr": 11,
+            "verse": "Wail, ye inhabitants of Maktesh; for all the people of Canaan are undone; all they that were laden with silver are cut off.\\r\\n"
+          },
+          "12": {
+            "verse_nr": 12,
+            "verse": "And it shall come to pass at that time, that I will search Jerusalem with lamps; and I will punish the men that are settled on their lees, that say in their heart, Jehovah will not do good, neither will he do evil.\\r\\n"
+          },
+          "13": {
+            "verse_nr": 13,
+            "verse": "And their wealth shall become a spoil, and their houses a desolation: yea, they shall build houses, but shall not inhabit them; and they shall plant vineyards, but shall not drink the wine thereof.\\r\\n"
+          },
+          "14": {
+            "verse_nr": 14,
+            "verse": "The great day of Jehovah is near, it is near and hasteth greatly,[even] the voice of the day of Jehovah; the mighty man crieth there bitterly.\\r\\n"
+          },
+          "15": {
+            "verse_nr": 15,
+            "verse": "That day is a day of wrath, a day of trouble and distress, a day of wasteness and desolation, a day of darkness and gloominess, a day of clouds and thick darkness,\\r\\n"
+          },
+          "16": {
+            "verse_nr": 16,
+            "verse": "a day of the trumpet and alarm, against the fortified cities, and against the high battlements.\\r\\n"
+          },
+          "17": {
+            "verse_nr": 17,
+            "verse": "And I will bring distress upon men, that they shall walk like blind men, because they have sinned against Jehovah; and their blood shall be poured out as dust, and their flesh as dung.\\r\\n"
+          },
+          "18": {
+            "verse_nr": 18,
+            "verse": "Neither their silver nor their gold shall be able to deliver them in the day of Jehovah's wrath; but the whole land shall be devoured by the fire of his jealousy: for he will make an end, yea, a terrible end, of all them that dwell in the land.\\r\\n"
+          }
+        }
+      },
+      {
+        "book_ref": "Zeph",
+        "book_name": "Zephaniah",
+        "book_nr": "36",
+        "chapter_nr": "2",
+        "chapter": {
+          "1": {
+            "verse_nr": "1",
+            "verse": "Gather yourselves together, yea, gather together, O nation that hath no shame;\\r\\n"
+          },
+          "2": {
+            "verse_nr": 2,
+            "verse": "before the decree bring forth,[before] the day pass as the chaff, before the fierce anger of Jehovah come upon you, before the day of Jehovah's anger come upon you.\\r\\n"
+          },
+          "3": {
+            "verse_nr": 3,
+            "verse": "Seek ye Jehovah, all ye meek of the earth, that have kept his ordinances; seek righteousness, seek meekness: it may be ye will be hid in the day of Jehovah's anger.\\r\\n"
+          },
+          "4": {
+            "verse_nr": 4,
+            "verse": "For Gaza shall be forsaken, and Ashkelon a desolation; they shall drive out Ashdod at noonday, and Ekron shall be rooted up.\\r\\n"
+          },
+          "5": {
+            "verse_nr": 5,
+            "verse": "Woe unto the inhabitants of the sea-coast, the nation of the Cherethites! The word of Jehovah is against you, O Canaan, the land of the Philistines; I will destroy thee, that there shall be no inhabitant.\\r\\n"
+          },
+          "6": {
+            "verse_nr": 6,
+            "verse": "And the sea-coast shall be pastures, with cottages for shepherds and folds for flocks.\\r\\n"
+          },
+          "7": {
+            "verse_nr": 7,
+            "verse": "And the coast shall be for the remnant of the house of Judah; they shall feed [their flocks] thereupon; in the houses of Ashkelon shall they lie down in the evening; for Jehovah their God will visit them, and bring back their captivity.\\r\\n"
+          },
+          "8": {
+            "verse_nr": 8,
+            "verse": "I have heard the reproach of Moab, and the revilings of the children of Ammon, wherewith they have reproached my people, and magnified themselves against their border.\\r\\n"
+          },
+          "9": {
+            "verse_nr": 9,
+            "verse": "Therefore as I live, saith Jehovah of hosts, the God of Israel, Surely Moab shall be as Sodom, and the children of Ammon as Gomorrah, a possession of nettles, and saltpits, and a perpetual desolation: the residue of my people shall make a prey of them, and the remnant of my nation shall inherit them.\\r\\n"
+          },
+          "10": {
+            "verse_nr": 10,
+            "verse": "This shall they have for their pride, because they have reproached and magnified themselves against the people of Jehovah of hosts.\\r\\n"
+          },
+          "11": {
+            "verse_nr": 11,
+            "verse": "Jehovah will be terrible unto them; for he will famish all the gods of the earth; and men shall worship him, every one from his place, even all the isles of the nations.\\r\\n"
+          },
+          "12": {
+            "verse_nr": 12,
+            "verse": "Ye Ethiopians also, ye shall be slain by my sword.\\r\\n"
+          },
+          "13": {
+            "verse_nr": 13,
+            "verse": "And he will stretch out his hand against the north, and destroy Assyria, and will make Nineveh a desolation, and dry like the wilderness.\\r\\n"
+          },
+          "14": {
+            "verse_nr": 14,
+            "verse": "And herds shall lie down in the midst of her, all the beasts of the nations: both the pelican and the porcupine shall lodge in the capitals thereof; [their] voice shall sing in the windows; desolation shall be in the thresholds: for he hath laid bare the cedar-work.\\r\\n"
+          },
+          "15": {
+            "verse_nr": 15,
+            "verse": "This is the joyous city that dwelt carelessly, that said in her heart, I am, and there is none besides me: how is she become a desolation, a place for beasts to lie down in! every one that passeth by her shall hiss, and wag his hand.\\r\\n"
+          }
+        }
+      },
+      {
+        "book_ref": "Zeph",
+        "book_name": "Zephaniah",
+        "book_nr": "36",
+        "chapter_nr": "3",
+        "chapter": {
+          "1": {
+            "verse_nr": "1",
+            "verse": "Woe to her that is rebellious and polluted! to the oppressing city!\\r\\n"
+          },
+          "2": {
+            "verse_nr": 2,
+            "verse": "She obeyed not the voice; she received not correction; she trusted not in Jehovah; she drew not near to her God.\\r\\n"
+          },
+          "3": {
+            "verse_nr": 3,
+            "verse": "Her princes in the midst of her are roaring lions; her judges are evening wolves; they leave nothing till the morrow.\\r\\n"
+          },
+          "4": {
+            "verse_nr": 4,
+            "verse": "Her prophets are light and treacherous persons; her priests have profaned the sanctuary, they have done violence to the law.\\r\\n"
+          },
+          "5": {
+            "verse_nr": 5,
+            "verse": "Jehovah in the midst of her is righteous; he will not do iniquity; every morning doth he bring his justice to light, he faileth not; but the unjust knoweth no shame.\\r\\n"
+          },
+          "6": {
+            "verse_nr": 6,
+            "verse": "I have cut off nations; their battlements are desolate; I have made their streets waste, so that none passeth by; their cities are destroyed, so that there is no man, so that there is no inhabitant.\\r\\n"
+          },
+          "7": {
+            "verse_nr": 7,
+            "verse": "I said, Only fear thou me; receive correction; so her dwelling shall not be cut off,[according to] all that I have appointed concerning her: but they rose early and corrupted all their doings.\\r\\n"
+          },
+          "8": {
+            "verse_nr": 8,
+            "verse": "Therefore wait ye for me, saith Jehovah, until the day that I rise up to the prey; for my determination is to gather the nations, that I may assemble the kingdoms, to pour upon them mine indignation, even all my fierce anger; for all the earth shall be devoured with the fire of my jealousy.\\r\\n"
+          },
+          "9": {
+            "verse_nr": 9,
+            "verse": "For then will I turn to the peoples of a pure language, that they may all call upon the name of Jehovah, to serve him with one consent.\\r\\n"
+          },
+          "10": {
+            "verse_nr": 10,
+            "verse": "From beyond the rivers of Ethiopia my suppliants, even the daughter of my dispersed, shall bring mine offering.\\r\\n"
+          },
+          "11": {
+            "verse_nr": 11,
+            "verse": "In that day shalt thou not be put to shame for all thy doings, wherein thou hast transgressed against me; for then I will take away out of the midst of thee thy proudly exulting ones, and thou shalt no more be haughty in my holy mountain.\\r\\n"
+          },
+          "12": {
+            "verse_nr": 12,
+            "verse": "But I will leave in the midst of thee an afflicted and poor people, and they shall take refuge in the name of Jehovah.\\r\\n"
+          },
+          "13": {
+            "verse_nr": 13,
+            "verse": "The remnant of Israel shall not do iniquity, nor speak lies; neither shall a deceitful tongue be found in their mouth; for they shall feed and lie down, and none shall make them afraid.\\r\\n"
+          },
+          "14": {
+            "verse_nr": 14,
+            "verse": "Sing, O daughter of Zion; shout, O Israel; be glad and rejoice with all the heart, O daughter of Jerusalem.\\r\\n"
+          },
+          "15": {
+            "verse_nr": 15,
+            "verse": "Jehovah hath taken away thy judgments, he hath cast out thine enemy: the King of Israel, even Jehovah, is in the midst of thee; thou shalt not fear evil any more.\\r\\n"
+          },
+          "16": {
+            "verse_nr": 16,
+            "verse": "In that day it shall be said to Jerusalem, Fear thou not; O Zion, let not thy hands be slack.\\r\\n"
+          },
+          "17": {
+            "verse_nr": 17,
+            "verse": "Jehovah thy God is in the midst of thee, a mighty one who will save; he will rejoice over thee with joy; he will rest in his love; he will joy over thee with singing.\\r\\n"
+          },
+          "18": {
+            "verse_nr": 18,
+            "verse": "I will gather them that sorrow for the solemn assembly, who were of thee; [to whom] the burden upon her was a reproach.\\r\\n"
+          },
+          "19": {
+            "verse_nr": 19,
+            "verse": "Behold, at that time I will deal with all them that afflict thee; and I will save that which is lame, and gather that which was driven away; and I will make them a praise and a name, whose shame hath been in all the earth.\\r\\n"
+          },
+          "20": {
+            "verse_nr": 20,
+            "verse": "At that time will I bring you in, and at that time will I gather you; for I will make you a name and a praise among all the peoples of the earth, when I bring back your captivity before your eyes, saith Jehovah. \\r\\n"
+          }
+        }
+      },
+      {
+        "book_ref": "Hagg",
+        "book_name": "Haggai",
+        "book_nr": "37",
+        "chapter_nr": "1",
+        "chapter": {
+          "1": {
+            "verse_nr": "1",
+            "verse": "In the second year of Darius the king, in the sixth month, in the first day of the month, came the word of Jehovah by Haggai the prophet unto Zerubbabel the son of Shealtiel, governor of Judah, and to Joshua the son of Jehozadak, the high priest, saying,\\r\\n"
+          },
+          "2": {
+            "verse_nr": 2,
+            "verse": "Thus speaketh Jehovah of hosts, saying, This people say, It is not the time [for us] to come, the time for Jehovah's house to be built.\\r\\n"
+          },
+          "3": {
+            "verse_nr": 3,
+            "verse": "Then came the word of Jehovah by Haggai the prophet, saying,\\r\\n"
+          },
+          "4": {
+            "verse_nr": 4,
+            "verse": "Is it a time for you yourselves to dwell in your ceiled houses, while this house lieth waste?\\r\\n"
+          },
+          "5": {
+            "verse_nr": 5,
+            "verse": "Now therefore thus saith Jehovah of hosts: Consider your ways.\\r\\n"
+          },
+          "6": {
+            "verse_nr": 6,
+            "verse": "Ye have sown much, and bring in little; ye eat, but ye have not enough; ye drink, but ye are not filled with drink; ye clothe you, but there is none warm; and he that earneth wages earneth wages [to put it] into a bag with holes.\\r\\n"
+          },
+          "7": {
+            "verse_nr": 7,
+            "verse": "Thus saith Jehovah of hosts: Consider your ways.\\r\\n"
+          },
+          "8": {
+            "verse_nr": 8,
+            "verse": "Go up to the mountain, and bring wood, and build the house; and I will take pleasure in it, and I will be glorified, saith Jehovah.\\r\\n"
+          },
+          "9": {
+            "verse_nr": 9,
+            "verse": "Ye looked for much, and, lo, it came to little; and when ye brought it home, I did blow upon it. Why? saith Jehovah of hosts. Because of my house that lieth waste, while ye run every man to his own house.\\r\\n"
+          },
+          "10": {
+            "verse_nr": 10,
+            "verse": "Therefore for your sake the heavens withhold the dew, and the earth withholdeth its fruit.\\r\\n"
+          },
+          "11": {
+            "verse_nr": 11,
+            "verse": "And I called for a drought upon the land, and upon the mountains, and upon the grain, and upon the new wine, and upon the oil, and upon that which the ground bringeth forth, and upon men, and upon cattle, and upon all the labor of the hands.\\r\\n"
+          },
+          "12": {
+            "verse_nr": 12,
+            "verse": "Then Zerubbabel the son of Shealtiel, and Joshua the son of Jehozadak, the high priest, with all the remnant of the people, obeyed the voice of Jehovah their God, and the words of Haggai the prophet, as Jehovah their God had sent him; and the people did fear before Jehovah.\\r\\n"
+          },
+          "13": {
+            "verse_nr": 13,
+            "verse": "Then spake Haggai Jehovah's messenger in Jehovah's message unto the people, saying, I am with you, saith Jehovah.\\r\\n"
+          },
+          "14": {
+            "verse_nr": 14,
+            "verse": "And Jehovah stirred up the spirit of Zerubbabel the son of Shealtiel, governor of Judah, and the spirit of Joshua the son of Jehozadak, the high priest, and the spirit of all the remnant of the people; and they came and did work on the house of Jehovah of hosts, their God,\\r\\n"
+          },
+          "15": {
+            "verse_nr": 15,
+            "verse": "in the four and twentieth day of the month, in the sixth [month], in the second year of Darius the king.\\r\\n"
+          }
+        }
+      }
+    ],
+    "direction": "LTR",
+    "type": "verse",
+    "version": "asv"
+  }
+]

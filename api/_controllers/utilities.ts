@@ -1,10 +1,10 @@
-import errorEmail from '../devOps/errorEmail'
+import errorEmail from '../_devOps/errorEmail'
 
-import Plans, { DBPlan } from '../models/planModel'
+import Plans, { DBPlan } from '../_models/planModel'
 
-import { bibleStructure, bibleArray } from '../dataServices'
+import { bibleStructure, bibleArray } from '../_dataServices'
 
-import { auth0 } from '../config'
+import { auth0 } from '../_config'
 
 export const verifyPhone = async (user, phone, carrier) => {
   const phoneData = user['https://brphones'] &&
@@ -15,7 +15,7 @@ export const verifyPhone = async (user, phone, carrier) => {
     : auth0.getUser({ id: user.sub })
       .then(u => {
         const freshPhoneData = u.user_metadata.phones &&
-        u.user_metadata.phones.find(p => p.phone === phone && p.carrier === carrier)
+          u.user_metadata.phones.find(p => p.phone === phone && p.carrier === carrier)
 
         return {
           hasPhone: Boolean(freshPhoneData),

@@ -1,10 +1,10 @@
-import Plans from '../../models/planModel'
+import Plans from '../../_models/planModel'
 import getBibleDotNet from '../bibleAPIConsumers/getBibleDotNet'
 import getNETBible from '../bibleAPIConsumers/netBible'
 import { sendESVEmailReminder } from '../bibleAPIConsumers/esvBible'
 import currentReading from './currentReading'
 import sendTextReminder from './sendTextReminder'
-import errorEmail from '../../devOps/errorEmail'
+import errorEmail from '../../_devOps/errorEmail'
 
 export default id => new Promise((resolve, reject) => {
   Plans.findById({ _id: id }, (err, plan) => {

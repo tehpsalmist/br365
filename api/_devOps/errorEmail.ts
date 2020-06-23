@@ -1,4 +1,4 @@
-import { sendEmail } from '../controllers/functions/sendEmail'
+import { sendEmail } from '../_controllers/functions/sendEmail'
 
 const { BIBLE_EMAIL } = process.env
 

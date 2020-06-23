@@ -1,4 +1,4 @@
-import { baseUrl } from '../../config'
+import { baseUrl } from '../../_config'
 
 export const emailVerificationCode = code => `<h1 style="text-align: center; font-weight: bold;">${code}</h1>
   <p>To verify your email, enter this code at <a href="${baseUrl}">biblereminder365.com</a>.</p>

@@ -9,9 +9,9 @@ const jwt = require('express-jwt')
 import { expressJwtSecret } from 'jwks-rsa'
 import sanitizer from 'sanitize'
 
-import { getDbConnectionString } from './config'
-import errorEmail from './devOps/errorEmail'
-import { apiRouter, webhookRouter } from './routes/api'
+import { getDbConnectionString } from './_config'
+import errorEmail from './_devOps/errorEmail'
+import { apiRouter, webhookRouter } from './_routes/api'
 
 const { PRODUCTION, DEV, LATER_ON_BR365_HEADER_SECRET } = process.env
 const port = process.env.PORT || 1337

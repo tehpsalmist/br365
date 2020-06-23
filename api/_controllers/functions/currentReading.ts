@@ -1,6 +1,6 @@
-import { bibleArray } from '../../dataServices'
-import Plans from '../../models/planModel'
-import errorEmail from '../../devOps/errorEmail'
+import { bibleArray } from '../../_dataServices'
+import Plans from '../../_models/planModel'
+import errorEmail from '../../_devOps/errorEmail'
 
 export default function (plan) {
   const readingArray = []

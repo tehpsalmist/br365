@@ -1,6 +1,6 @@
 import { reduceReferenceStringToObject } from '../utilities'
 import { sendText } from './sendEmail'
-import { baseUrl } from '../../config'
+import { baseUrl } from '../../_config'
 
 export default (reading, plan) => {
   const { book, chapter } = reduceReferenceStringToObject(reading[0])

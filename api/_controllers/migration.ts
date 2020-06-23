@@ -1,4 +1,4 @@
-import Plans from '../models/planModel'
+import Plans from '../_models/planModel'
 import fetch from 'node-fetch'
 import { createTimer } from './functions/timers'
 import { sendEmail } from './functions/sendEmail'

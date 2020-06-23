@@ -2,10 +2,10 @@ import { Router } from 'express'
 const apiRouter = Router()
 const webhookRouter = Router()
 
-import { createPlan, getPlan, updatePlan, deletePlanRoute, getAllPlans, recoverPlans } from '../controllers/plans'
-import { updateUserName, removeUserEmail, removeUserPhone, deleteUser, requestEmailVerification, requestTextVerification, resendVerificationEmail, resendVerificationText, submitVerificationCode } from '../controllers/users'
-import { getChapter } from '../controllers/bible'
-import { sendBibleReading, migrate } from '../controllers/triggers'
+import { createPlan, getPlan, updatePlan, deletePlanRoute, getAllPlans, recoverPlans } from '../_controllers/plans'
+import { updateUserName, removeUserEmail, removeUserPhone, deleteUser, requestEmailVerification, requestTextVerification, resendVerificationEmail, resendVerificationText, submitVerificationCode } from '../_controllers/users'
+import { getChapter } from '../_controllers/bible'
+import { sendBibleReading, migrate } from '../_controllers/triggers'
 
 apiRouter.post('/plan', createPlan)
 apiRouter.get('/plan/:id', getPlan)

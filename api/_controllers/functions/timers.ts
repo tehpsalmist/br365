@@ -1,6 +1,6 @@
 import fetch from 'node-fetch'
 
-import { baseUrl } from '../../config'
+import { baseUrl } from '../../_config'
 import { timeOfDayToCronString } from '../utilities'
 
 const { LATER_ON_REFRESH_TOKEN, LATER_ON_BR365_HEADER_SECRET, LATER_ON_BR365_ACCESS_TOKEN } = process.env

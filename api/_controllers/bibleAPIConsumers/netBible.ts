@@ -1,6 +1,6 @@
 import fetch from 'node-fetch'
 import { sendEmail } from '../functions/sendEmail'
-import { months, translations, bibleArray } from '../../dataServices'
+import { months, translations, bibleArray } from '../../_dataServices'
 import { visitDashboardButton, nextChapterButton } from '../emailComponents'
 
 export default async function (reading, plan) {
