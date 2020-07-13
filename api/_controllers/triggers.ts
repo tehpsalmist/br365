@@ -12,7 +12,7 @@ export const sendBibleReading = async (req, res) => {
     .catch(err => err instanceof Error ? err : new Error(JSON.stringify(err)))
 
   if (success instanceof Error) {
-    return res.status(500).json({ success: false, error: success})
+    return res.status(500).json({ success: false, error: success })
   }
 
   return res.status(200).json({ success: true })

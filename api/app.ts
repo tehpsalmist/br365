@@ -54,7 +54,8 @@ mongoose.connect(getDbConnectionString(), {
   useNewUrlParser: true,
   useFindAndModify: false,
   reconnectInterval: 1000,
-  reconnectTries: Number.MAX_VALUE
+  reconnectTries: Number.MAX_VALUE,
+  useUnifiedTopology: true
 }).catch(err => {
   console.error(new Date().toUTCString(), err)
   errorEmail({
