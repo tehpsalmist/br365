@@ -19,7 +19,7 @@
   "homepage": "https://github.com/tehpsalmist/NodeCode#readme",
   "dependencies": {
     "@types/mongoose": "^5.5.32",
-    "auth0": "^2.20.0",
+    "auth0": "^2.27.1",
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
