@@ -14,8 +14,8 @@ const {
 } = process.env
 
 export const getDbConnectionString = () => DEV
-  ? `mongodb://${MONGO_USER}:${MONGO_PASSWORD}@ds117101.mlab.com:17101/br365test`
-  : `mongodb://${MONGO_USER}:${MONGO_PASSWORD}@ds111618.mlab.com:11618/biblereminder`
+  ? `mongodb://localhost:27017`
+  : `mongodb+srv://${MONGO_USER}:${MONGO_PASSWORD}@biblereminder.ie62b.mongodb.net/biblereminder?retryWrites=true&w=majority`
 
 export const auth0 = new ManagementClient({
   domain: 'br365.auth0.com',
