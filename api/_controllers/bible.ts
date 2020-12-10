@@ -1,7 +1,8 @@
 import fetch from 'node-fetch'
 import errorEmail from '../_devOps/errorEmail'
-import { isValidJSON } from './utilities'
+import { isValidJSON, reduceReferenceStringToObject } from './utilities'
 import { ESVBibleArray, NETBibleArray, bibleArray } from '../_dataServices'
+import { getScriptureJSON } from './bibleAPIConsumers/getBibleDotNet'
 
 const chapters = {
   esv: ESVBibleArray,
@@ -57,34 +58,15 @@ async function getBibleDotNet (reference, version) {
 
   if (!json) return null
 
-  const verseData = JSON.parse(json).book
+  let chapterString = `<h2>${json.book_name} ${json.chapter}</h2><p class="leading-relaxed text-lg">`
 
-  return verseData.map(item => {
-    let chapterString = `<h2>${item.book_name} ${item.chapter_nr}</h2><p class="leading-relaxed text-lg">`
+  json.verses.forEach(({ verse, text }) => {
+    chapterString += `${verse === 1 ? '' : `<sup class="text-primary align-super">${verse}</sup>`}${text} `
+  })
 
-    Object.keys(item.chapter).forEach(verse => {
-      chapterString += `${item.chapter[verse].verse_nr === 1 ? '' : `<sup class="text-primary align-super">${item.chapter[verse].verse_nr}</sup>`}${item.chapter[verse].verse} `
-    })
+  chapterString += `</p>`
 
-    chapterString += `</p>`
-
-    return chapterString
-  }).join('')
-}
-
-function getScriptureJSON (readingList, translation, iteration = 0) {
-  return fetch(`http://getbible.net/json?p=${readingList}&v=${translation}`)
-    .then(response => response.text())
-    .then(text => {
-      const JSONstring = text[0] === '(' ? text.slice(1, -2) : text
-
-      return isValidJSON(JSONstring) || (iteration < 5 && getScriptureJSON(readingList, translation, ++iteration))
-    })
-    .catch(err => {
-      errorEmail({ err, subject: 'Error', message: `getBibleDotNet.js Error:` })
-
-      return iteration < 5 && getScriptureJSON(readingList, translation, ++iteration)
-    })
+  return chapterString
 }
 
 function isChapterValidInteger (chapter) {

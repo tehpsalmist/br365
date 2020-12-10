@@ -1,25 +1,32 @@
 import { sendEmail } from '../functions/sendEmail'
 import errorEmail from '../../_devOps/errorEmail'
-import { isValidJSON } from '../utilities'
+import { isValidJSON, reduceReferenceStringToObject } from '../utilities'
 import fetch from 'node-fetch'
-import { translations, months, bibleArray } from '../../_dataServices'
+import { translations, months, bibleArray, books } from '../../_dataServices'
 import { visitDashboardButton, nextChapterButton } from '../emailComponents'
 
+interface VerseData {
+  translation: string,
+  abbreviation: string,
+  lang: string,
+  language: string,
+  direction: string,
+  encoding: string,
+  book_nr: number,
+  book_name: string,
+  chapter: number,
+  name: string,
+  verses: {
+    chapter: number,
+    verse: number,
+    name: string,
+    text: string
+  }[]
+}
+
 export default function (readingArray, plan) {
-  const promises = []
-
-  if (readingArray.length > 6) {
-    const reading2 = readingArray.splice(6, 6).join(';')
-    const reading1 = readingArray.join(';')
-    promises.push(getScriptureJSON(reading1, plan.translation))
-    promises.push(getScriptureJSON(reading2, plan.translation))
-  } else {
-    promises.push(getScriptureJSON(readingArray.join(';'), plan.translation))
-  }
-
-  return Promise.all(promises)
-    .then(strings => {
-      const verseData = strings.reduce((aggregate, string) => string ? [...aggregate, ...JSON.parse(string).book] : [...aggregate, string], [])
+  return Promise.all<VerseData>(readingArray.map((reading) => getScriptureJSON(reading, plan.translation)))
+    .then((verseData: VerseData[]) => {
       const fullTranslation = translations.find(t => plan.translation === t.code)
 
       const htmlArray = [
@@ -27,10 +34,10 @@ export default function (readingArray, plan) {
         ...verseData.map(item => {
           if (!item) return '<p>An unfortunate error occurred while formatting this chapter.<br>Visit your dashboard to attempt to resend today\'s reading.</p>'
 
-          let chapterString = `<h3>${item.book_name} ${item.chapter_nr}</h3><p style="line-height: 1.75em;">`
+          let chapterString = `<h3>${item.book_name} ${item.chapter}</h3><p style="line-height: 1.75em;">`
 
-          Object.keys(item.chapter).forEach(verse => {
-            chapterString += `${item.chapter[verse].verse_nr === 1 ? '' : `<sup style="line-height: .75em; font-size: .75em; vertical-align: top; color: green;">${item.chapter[verse].verse_nr}</sup>`}${item.chapter[verse].verse} `
+          item.verses.forEach(({ verse, text }) => {
+            chapterString += `${verse === 1 ? '' : `<sup style="line-height: .75em; font-size: .75em; vertical-align: top; color: green;">${verse}</sup>`}${text} `
           })
 
           chapterString += `</p>`
@@ -54,19 +61,23 @@ export default function (readingArray, plan) {
       subject: 'Error',
       message: `getBibleDotNet.js Error:`
     }))
+}
 
-  function getScriptureJSON (readingList, translation, iteration = 0) {
-    return fetch(`http://getbible.net/json?p=${readingList}&v=${translation}`)
-      .then(response => response.text())
-      .then(text => {
-        const JSONstring = text[0] === '(' ? text.slice(1, -2) : text
+export function getScriptureJSON (reading, translation, iteration = 0): Promise<VerseData> {
+  const { book, chapter } = reduceReferenceStringToObject(reading)
 
-        return isValidJSON(JSONstring) || (iteration < 5 && getScriptureJSON(readingList, translation, ++iteration))
-      })
-      .catch(err => {
-        errorEmail({ err, subject: 'Error', message: `getBibleDotNet.js Error:` })
+  const bookNumber = books.findIndex(bk => bk === book) + 1
 
-        return iteration < 5 && getScriptureJSON(readingList, translation, ++iteration)
-      })
-  }
+  return fetch(`http://getbible.net/v2/${translation}/${bookNumber}/${chapter}`)
+    .then(response => {
+      if (!response.ok) {
+        return iteration < 5 && getScriptureJSON(reading, translation, ++iteration)
+      }
+      return response.json()
+    })
+    .catch(err => {
+      errorEmail({ err, subject: 'Error', message: `getBibleDotNet.js Error:` })
+
+      return iteration < 5 && getScriptureJSON(reading, translation, ++iteration)
+    })
 }
