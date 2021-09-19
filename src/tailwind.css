@@ -158,7 +158,7 @@ button.mat-raised-button.mat-primary[disabled] {
 /* purgecss end ignore */
 
 .save-icon {
-  @apply cursor-pointer ml-2 p-3 h-3 w-3 rounded-full !important;
+  @apply cursor-pointer ml-2 p-3 h-6 w-6 rounded-full !important;
 }
 
 .save-icon-active {
