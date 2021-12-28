@@ -32,6 +32,6 @@
     "nodemailer": "^6.6.0",
     "sanitize": "^2.1.0",
     "tslib": "^1.10.0",
-    "validator": "^10.9.0"
+    "validator": "^13.7.0"
   }
 }
