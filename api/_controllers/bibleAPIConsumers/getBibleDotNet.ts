@@ -48,7 +48,7 @@ export default function (readingArray, plan) {
 
       const finalHTML = htmlArray.join('')
       const now = new Date()
-      const nextReference = bibleArray[bibleArray.findIndex(ref => ref === readingArray[readingArray.length - 1]) + 1].split(':')[0]
+      const nextReference = bibleArray[(bibleArray.findIndex(ref => ref === readingArray[readingArray.length - 1]) + 1) % 1189].split(':')[0]
 
       return sendEmail({
         to: plan.email,
