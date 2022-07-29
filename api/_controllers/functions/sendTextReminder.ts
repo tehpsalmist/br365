@@ -11,5 +11,5 @@ export default (reading, plan) => {
     to: `${plan.phone}@${plan.carrier}`,
     subject: plan.planName,
     text: url
-  })
+  }).catch((err) => console.error('text error:', err))
 }

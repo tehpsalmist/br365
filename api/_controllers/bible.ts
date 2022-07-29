@@ -64,7 +64,7 @@ async function getBibleDotNet (reference, version) {
     chapterString += `${verse === 1 ? '' : `<sup class="text-primary align-super">${verse}</sup>`}${text} `
   })
 
-  chapterString += `</p>`
+  chapterString += '</p>'
 
   return chapterString
 }

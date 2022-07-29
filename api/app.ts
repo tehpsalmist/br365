@@ -1,17 +1,17 @@
 import { join } from 'path'
-require('tls').DEFAULT_ECDH_CURVE = 'auto'
-
-const express = require('express')
 import cors from 'cors'
 import { urlencoded, json } from 'body-parser'
 import mongoose from 'mongoose'
-const jwt = require('express-jwt')
 import { expressJwtSecret } from 'jwks-rsa'
 import sanitizer from 'sanitize'
 
 import { getDbConnectionString } from './_config'
 import errorEmail from './_devOps/errorEmail'
 import { apiRouter, webhookRouter } from './_routes/api'
+require('tls').DEFAULT_ECDH_CURVE = 'auto'
+
+const express = require('express')
+const jwt = require('express-jwt')
 
 const { PRODUCTION, DEV, LATER_ON_BR365_HEADER_SECRET } = process.env
 const port = process.env.PORT || 1337
@@ -28,10 +28,10 @@ const checkJwt = jwt({
     cache: true,
     rateLimit: true,
     jwksRequestsPerMinute: 5,
-    jwksUri: `https://br365.auth0.com/.well-known/jwks.json`
+    jwksUri: 'https://br365.auth0.com/.well-known/jwks.json'
   }),
   aud: 'https://biblereminder365.com/api',
-  iss: `https://br365.auth0.com/`,
+  iss: 'https://br365.auth0.com/',
   algorithms: ['RS256']
 })
 

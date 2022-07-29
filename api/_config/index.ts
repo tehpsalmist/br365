@@ -14,7 +14,7 @@ const {
 } = process.env
 
 export const getDbConnectionString = () => DEV
-  ? `mongodb://localhost:27017`
+  ? 'mongodb://localhost:27017'
   : `mongodb+srv://${MONGO_USER}:${MONGO_PASSWORD}@biblereminder.ie62b.mongodb.net/biblereminder?retryWrites=true&w=majority`
 
 export const auth0 = new ManagementClient({

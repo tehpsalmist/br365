@@ -33,8 +33,8 @@ export const requestEmailVerification = async (req, res) => {
 
   // store code
   const setVKey = await Promise.all([
-    redis.hsetnx(verificationKey, `code`, code),
-    redis.hsetnx(verificationKey, `tries`, 0)
+    redis.hsetnx(verificationKey, 'code', code),
+    redis.hsetnx(verificationKey, 'tries', 0)
   ]).catch(err => err instanceof Error ? err : new Error(err))
 
   if (setVKey instanceof Error) {
@@ -125,8 +125,8 @@ export const requestTextVerification = async (req, res) => {
 
   // store code
   const setVKey = await Promise.all([
-    redis.hsetnx(verificationKey, `code`, code),
-    redis.hsetnx(verificationKey, `tries`, 0)
+    redis.hsetnx(verificationKey, 'code', code),
+    redis.hsetnx(verificationKey, 'tries', 0)
   ]).catch(err => err instanceof Error ? err : new Error(err))
 
   if (setVKey instanceof Error) {

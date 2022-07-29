@@ -2,11 +2,25 @@ import validator from 'validator'
 
 import Plans from '../_models/planModel'
 
-import { verifyEmail, verifyPhone, deletePlan, getPhoneFromString, stringAndIntFromReference, referenceFromString } from './utilities'
+import {
+  verifyEmail,
+  verifyPhone,
+  deletePlan,
+  getPhoneFromString,
+  stringAndIntFromReference,
+  referenceFromString
+} from './utilities'
 
 import errorEmail from '../_devOps/errorEmail'
 
-import { bibleStructure, bibleArray, translations, timezones, carriers, months } from '../_dataServices'
+import {
+  bibleStructure,
+  bibleArray,
+  translations,
+  timezones,
+  carriers,
+  months
+} from '../_dataServices'
 import { baseUrl } from '../_config'
 
 import { sendEmail, sendText } from './functions/sendEmail'
@@ -19,29 +33,58 @@ export const createPlan = async (req, res) => {
   const phone = getPhoneFromString(req.bodyString('phone')) || null
   const carrier = req.bodyOneOf('carrier', carriers)
 
-  if (!email && (!phone || !carrier)) return res.status(400).json({ message: 'Must send a valid email or phone' })
+  if (!email && (!phone || !carrier)) {
+    return res
+      .status(400)
+      .json({ message: 'Must send a valid email or phone' })
+  }
 
   const planName = req.bodyString('planName')
-  const translation = req.bodyOneOf('translation', translations.map(t => t.code))
+  const translation = req.bodyOneOf(
+    'translation',
+    translations.map((t) => t.code)
+  )
 
-  const chapters = validator.isInt(String(req.body.chapters), { max: 12, min: 1 }) ? req.bodyInt('chapters') : 1
+  const chapters = validator.isInt(String(req.body.chapters), {
+    max: 12,
+    min: 1
+  })
+    ? req.bodyInt('chapters')
+    : 1
 
-  const timeZone = req.bodyOneOf('timeZone', timezones.map(t => t.value))
-  const time = req.bodyPattern('time', /^([0-9]|0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$/)
+  const timeZone = req.bodyOneOf(
+    'timeZone',
+    timezones.map((t) => t.value)
+  )
+  const time = req.bodyPattern(
+    'time',
+    /^([0-9]|0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$/
+  )
 
   const book = req.bodyOneOf('book', Object.keys(bibleStructure))
-  const chapter = Number(
-    req.bodyOneOf('chapter', bibleStructure[book].map((v, i) => i + 1)) ||
-    req.bodyOneOf('chapter', bibleStructure[book].map((v, i) => String(i + 1)))
-  ) || 1
+  const chapter =
+    Number(
+      req.bodyOneOf(
+        'chapter',
+        bibleStructure[book].map((v, i) => i + 1)
+      ) ||
+        req.bodyOneOf(
+          'chapter',
+          bibleStructure[book].map((v, i) => String(i + 1))
+        )
+    ) || 1
 
   const validating = { planName, translation, timeZone, time, book }
-  const invalid = Object.keys(validating).filter(key => validating[key] === null)
+  const invalid = Object.keys(validating).filter(
+    (key) => validating[key] === null
+  )
 
-  if (invalid.length) return res.status(422).json({ message: 'invalid inputs', keys: invalid })
+  if (invalid.length) { return res.status(422).json({ message: 'invalid inputs', keys: invalid }) }
 
   const [phoneVerification, emailVerification] = await Promise.all([
-    (phone && carrier) ? verifyPhone(req.user, phone, carrier) : { verified: true },
+    phone && carrier
+      ? verifyPhone(req.user, phone, carrier)
+      : { verified: true },
     email ? verifyEmail(req.user, email) : { verified: true }
   ])
 
@@ -56,18 +99,23 @@ export const createPlan = async (req, res) => {
   const activeEmail = !!email
   const activeText = !!(phone && carrier)
 
-  const userName = req.user['https://preferredName'] || req.user.name || req.user.nickname
+  const userName =
+    req.user['https://preferredName'] || req.user.name || req.user.nickname
   const userId = req.user.sub
 
   const date = new Date()
   date.setDate(date.getDate() + 1)
 
-  const dateString = `${months[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`
+  const dateString = `${
+    months[date.getMonth()]
+  } ${date.getDate()}, ${date.getFullYear()}`
 
   const startingChapter = bibleStructure[book][chapter - 1]
-  const startingChapterInt = bibleArray.findIndex(item => item === startingChapter)
+  const startingChapterInt = bibleArray.findIndex(
+    (item) => item === startingChapter
+  )
 
-  const fullTranslation = translations.find(t => t.code === translation)
+  const fullTranslation = translations.find((t) => t.code === translation)
 
   const newPlan = new Plans({
     phone,
@@ -96,8 +144,11 @@ export const createPlan = async (req, res) => {
     }
   })
 
-  const savedPlan = await newPlan.save()
-    .catch(err => err instanceof Error ? err : new Error(JSON.stringify(err)))
+  const savedPlan = await newPlan
+    .save()
+    .catch((err) =>
+      err instanceof Error ? err : new Error(JSON.stringify(err))
+    )
 
   if (savedPlan instanceof Error) {
     return res.status(500).json({ message: 'Error saving plan' })
@@ -110,8 +161,11 @@ export const createPlan = async (req, res) => {
       res.status(500).json({ message: 'plan created but timer failed' })
     }
 
-    const updatedTimerIdOnPlan = await Plans.findByIdAndUpdate(savedPlan._id, { timerId: createdTimerId })
-      .catch(err => err instanceof Error ? err : new Error(JSON.stringify(err)))
+    const updatedTimerIdOnPlan = await Plans.findByIdAndUpdate(savedPlan._id, {
+      timerId: createdTimerId
+    }).catch((err) =>
+      err instanceof Error ? err : new Error(JSON.stringify(err))
+    )
 
     if (updatedTimerIdOnPlan instanceof Error) {
       errorEmail({
@@ -123,17 +177,24 @@ export const createPlan = async (req, res) => {
       return res.status(500).json({ message: 'plan created but timer failed' })
     }
 
-    activeEmail && sendEmail({
-      to: email,
-      subject: 'Your Bible Reminder 365 Reading Plan',
-      html: `<h6>${dateString}</h6><h4>Hey ${userName}!</h4><p>Your reading plan '${planName}' is now active! ${chapters > 1 ? chapters + ' chapters' : '1 chapter'} of the Bible (${fullTranslation.fullText}) ${chapters > 1 ? 'have' : 'has'} been predestined to arrive in your inbox at ${time} every day.</p><p>If you have any suggestions or feedback regarding this service, simply reply to any of the emails you receive from us and we will get back to you as quickly as we can. Tolle Lege!</p>`
-    })
+    activeEmail &&
+      sendEmail({
+        to: email,
+        subject: 'Your Bible Reminder 365 Reading Plan',
+        html: `<h6>${dateString}</h6><h4>Hey ${userName}!</h4><p>Your reading plan '${planName}' is now active! ${
+          chapters > 1 ? chapters + ' chapters' : '1 chapter'
+        } of the Bible (${fullTranslation.fullText}) ${
+          chapters > 1 ? 'have' : 'has'
+        } been predestined to arrive in your inbox at ${time} every day.</p><p>If you have any suggestions or feedback regarding this service, simply reply to any of the emails you receive from us and we will get back to you as quickly as we can. Tolle Lege!</p>`
+      })
 
-    activeText && sendText({
-      to: `${phone}@${carrier}`,
-      subject: 'Plan Started',
-      text: `${planName} is active! ${baseUrl}/read`
-    })
+    if (activeText) {
+      sendText({
+        to: `${phone}@${carrier}`,
+        subject: 'Plan Started',
+        text: `${planName} is active! ${baseUrl}/read`
+      }).catch((err) => console.error('text error:', err))
+    }
   }
 
   const { __v, timerId, ...returnPlan } = savedPlan.toObject()
@@ -148,7 +209,9 @@ export const createPlan = async (req, res) => {
   sendEmail({
     to: BIBLE_EMAIL,
     subject: 'New User Signup!',
-    html: `<h2>New User Signup:</h2><h3>${email}/${phone}: ${planName}</h3><p>${userName} will be receiving ${chapters > 1 ? chapters + ' chapters' : '1 chapter'} of the ${fullTranslation.acronym} at ${time} each day.</p>`
+    html: `<h2>New User Signup:</h2><h3>${email}/${phone}: ${planName}</h3><p>${userName} will be receiving ${
+      chapters > 1 ? chapters + ' chapters' : '1 chapter'
+    } of the ${fullTranslation.acronym} at ${time} each day.</p>`
   })
 }
 
@@ -182,12 +245,14 @@ export const getAllPlans = (req, res) => {
     } else if (!plans.length) {
       res.status(404).json({ message: 'No plans associated with this user' })
     } else {
-      res.json(plans.map(plan => ({
-        ...plan.toObject(),
-        startingChapter: referenceFromString(plan.startingChapter.string),
-        lastChapter: referenceFromString(plan.lastChapter.string),
-        nextChapter: referenceFromString(plan.nextChapter.string)
-      })))
+      res.json(
+        plans.map((plan) => ({
+          ...plan.toObject(),
+          startingChapter: referenceFromString(plan.startingChapter.string),
+          lastChapter: referenceFromString(plan.lastChapter.string),
+          nextChapter: referenceFromString(plan.nextChapter.string)
+        }))
+      )
     }
   })
 }
@@ -199,7 +264,7 @@ export const updatePlan = async (req, res) => {
   if (email) {
     const { verified } = await verifyEmail(req.user, email)
 
-    if (!verified) return res.status(403).json({ message: 'Unverified contacts', email })
+    if (!verified) { return res.status(403).json({ message: 'Unverified contacts', email }) }
   }
 
   // Verify phone/carrier, if applicable
@@ -208,23 +273,34 @@ export const updatePlan = async (req, res) => {
 
   if ((phone && !carrier) || (!phone && carrier)) {
     return res.status(400).json({
-      message: 'Phone numbers and carriers cannot be updated independently, please send both'
+      message:
+        'Phone numbers and carriers cannot be updated independently, please send both'
     })
   }
 
   if (phone && carrier) {
     const { verified } = await verifyPhone(req.user, phone, carrier)
 
-    if (!verified) return res.status(403).json({ message: 'Unverified contacts', phone })
+    if (!verified) { return res.status(403).json({ message: 'Unverified contacts', phone }) }
   }
 
   // Verify bible reference, if applicable
-  const book = req.body.hasOwnProperty('book') && req.bodyOneOf('book', Object.keys(bibleStructure))
+  const book =
+    req.body.hasOwnProperty('book') &&
+    req.bodyOneOf('book', Object.keys(bibleStructure))
 
-  const chapter = req.body.hasOwnProperty('chapter') && Number(
-    req.bodyOneOf('chapter', bibleStructure[book].map((v, i) => i + 1)) ||
-    req.bodyOneOf('chapter', bibleStructure[book].map((v, i) => String(i + 1)))
-  )
+  const chapter =
+    req.body.hasOwnProperty('chapter') &&
+    Number(
+      req.bodyOneOf(
+        'chapter',
+        bibleStructure[book].map((v, i) => i + 1)
+      ) ||
+        req.bodyOneOf(
+          'chapter',
+          bibleStructure[book].map((v, i) => String(i + 1))
+        )
+    )
 
   // Verify the remaining properties, where applicable
   const updateCandidates = {
@@ -232,27 +308,71 @@ export const updatePlan = async (req, res) => {
     phone,
     carrier,
     planName: req.body.hasOwnProperty('planName') && req.bodyString('planName'),
-    translation: req.body.hasOwnProperty('translation') && req.bodyOneOf('translation', translations.map(t => t.code)),
-    chapters: req.body.hasOwnProperty('chapters') ? validator.isInt(String(req.body.chapters), { max: 12, min: 1 }) ? req.bodyInt('chapters') : null : false,
-    timeZone: req.body.hasOwnProperty('timeZone') && req.bodyOneOf('timeZone', timezones.map(t => t.value)),
-    time: req.body.hasOwnProperty('time') && req.bodyPattern('time', /^([0-9]|0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$/),
-    nextChapter: (req.body.hasOwnProperty('book') || req.body.hasOwnProperty('chapter')) ? book && chapter ? stringAndIntFromReference({ book, chapter }) : null : false,
-    activeEmail: req.body.hasOwnProperty('activeEmail') ? typeof req.body.activeEmail === 'boolean' ? req.body.activeEmail : null : undefined,
-    activeText: req.body.hasOwnProperty('activeText') ? typeof req.body.activeText === 'boolean' ? req.body.activeText : null : undefined
+    translation:
+      req.body.hasOwnProperty('translation') &&
+      req.bodyOneOf(
+        'translation',
+        translations.map((t) => t.code)
+      ),
+    chapters: req.body.hasOwnProperty('chapters')
+      ? validator.isInt(String(req.body.chapters), { max: 12, min: 1 })
+        ? req.bodyInt('chapters')
+        : null
+      : false,
+    timeZone:
+      req.body.hasOwnProperty('timeZone') &&
+      req.bodyOneOf(
+        'timeZone',
+        timezones.map((t) => t.value)
+      ),
+    time:
+      req.body.hasOwnProperty('time') &&
+      req.bodyPattern('time', /^([0-9]|0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$/),
+    nextChapter:
+      req.body.hasOwnProperty('book') || req.body.hasOwnProperty('chapter')
+        ? book && chapter
+          ? stringAndIntFromReference({ book, chapter })
+          : null
+        : false,
+    activeEmail: req.body.hasOwnProperty('activeEmail')
+      ? typeof req.body.activeEmail === 'boolean'
+        ? req.body.activeEmail
+        : null
+      : undefined,
+    activeText: req.body.hasOwnProperty('activeText')
+      ? typeof req.body.activeText === 'boolean'
+        ? req.body.activeText
+        : null
+      : undefined
   }
 
   const planId = req.paramString('id')
 
-  const unsanitized = Object.keys(updateCandidates).filter(key => updateCandidates[key] === null)
+  const unsanitized = Object.keys(updateCandidates).filter(
+    (key) => updateCandidates[key] === null
+  )
 
   if (planId === null || unsanitized.length) {
-    return res.status(422).json({ message: `Invalid input${unsanitized.length > 1 ? 's' : ''}`, details: unsanitized })
+    return res
+      .status(422)
+      .json({
+        message: `Invalid input${unsanitized.length > 1 ? 's' : ''}`,
+        details: unsanitized
+      })
   }
 
   // prepare updates object to be sent to the database
   const updates = Object.keys(updateCandidates)
-    .filter(key => (key === 'activeEmail' || key === 'activeText') && updateCandidates[key] !== undefined ? true : Boolean(updateCandidates[key]))
-    .reduce((allProps, key) => ({ ...allProps, [key]: updateCandidates[key] }), {})
+    .filter((key) =>
+      (key === 'activeEmail' || key === 'activeText') &&
+      updateCandidates[key] !== undefined
+        ? true
+        : Boolean(updateCandidates[key])
+    )
+    .reduce(
+      (allProps, key) => ({ ...allProps, [key]: updateCandidates[key] }),
+      {}
+    )
 
   Plans.findByIdAndUpdate(planId, updates, { new: true }, async (err, plan) => {
     if (err) return res.status(500).json(err)
@@ -271,18 +391,25 @@ export const updatePlan = async (req, res) => {
         const deletion = await deleteTimer(plan.timerId)
 
         if (!deletion) {
-          return res.status(500).json({ message: 'Error while removing timer' })
+          return res
+            .status(500)
+            .json({ message: 'Error while removing timer' })
         }
       } else {
         timerId = await createTimer(plan)
 
         if (!timerId) {
-          return res.status(500).json({ message: 'Error while creating timer' })
+          return res
+            .status(500)
+            .json({ message: 'Error while creating timer' })
         }
       }
 
-      const updatedTimerIdOnPlan = await Plans.findByIdAndUpdate(planId, { timerId })
-        .catch(error => error instanceof Error ? error : new Error(JSON.stringify(error)))
+      const updatedTimerIdOnPlan = await Plans.findByIdAndUpdate(planId, {
+        timerId
+      }).catch((error) =>
+        error instanceof Error ? error : new Error(JSON.stringify(error))
+      )
 
       if (updatedTimerIdOnPlan instanceof Error) {
         errorEmail({
@@ -291,7 +418,9 @@ export const updatePlan = async (req, res) => {
           message: `${JSON.stringify(plan, null, 2)}:`
         })
 
-        return res.status(500).json({ message: 'Error while updating plan with timer details' })
+        return res
+          .status(500)
+          .json({ message: 'Error while updating plan with timer details' })
       }
     } else if (timeChanged && activeNow) {
       await updateTimer(plan)
@@ -311,7 +440,9 @@ export const updatePlan = async (req, res) => {
 export const deletePlanRoute = async (req, res) => {
   const planId = req.paramString('id')
 
-  const deletion = await deletePlan(planId, req.user.sub).catch(err => err instanceof Error ? err : new Error(JSON.stringify(err)))
+  const deletion = await deletePlan(planId, req.user.sub).catch((err) =>
+    err instanceof Error ? err : new Error(JSON.stringify(err))
+  )
 
   if (deletion instanceof Error) {
     errorEmail({
@@ -320,7 +451,9 @@ export const deletePlanRoute = async (req, res) => {
       err: deletion
     })
 
-    return res.status(500).json({ message: 'An error occurred while deleting plan' })
+    return res
+      .status(500)
+      .json({ message: 'An error occurred while deleting plan' })
   }
 
   const timerDeletion = await deleteTimer(deletion.timerId)
@@ -328,7 +461,11 @@ export const deletePlanRoute = async (req, res) => {
   if (!timerDeletion) {
     errorEmail({
       subject: 'Timer deletion error',
-      message: `Error deleting timer for plan: ${JSON.stringify(deletion, null, 2)}`,
+      message: `Error deleting timer for plan: ${JSON.stringify(
+        deletion,
+        null,
+        2
+      )}`,
       err: 'unable to delete timer'
     })
   }
@@ -342,10 +479,21 @@ export const recoverPlans = async (req, res) => {
 
   const { verified } = await verifyEmail(req.user, email)
 
-  if (!verified) return res.status(403).json({ message: 'Unverified contacts', email })
+  if (!verified) { return res.status(403).json({ message: 'Unverified contacts', email }) }
 
-  Plans.find({ email: { $regex: new RegExp('^' + email.toLowerCase(), 'i') }, userId: null })
-    .then(plans => plans.length && Promise.all(plans.map(plan => Plans.findByIdAndUpdate(plan._id, { userId }))))
-    .then(plans => res.status(200).json({ plans }))
-    .catch(err => res.status(500).json({ message: 'Error recovering plans', error: err }))
+  Plans.find({
+    email: { $regex: new RegExp('^' + email.toLowerCase(), 'i') },
+    userId: null
+  })
+    .then(
+      (plans) =>
+        plans.length &&
+        Promise.all(
+          plans.map((plan) => Plans.findByIdAndUpdate(plan._id, { userId }))
+        )
+    )
+    .then((plans) => res.status(200).json({ plans }))
+    .catch((err) =>
+      res.status(500).json({ message: 'Error recovering plans', error: err })
+    )
 }
