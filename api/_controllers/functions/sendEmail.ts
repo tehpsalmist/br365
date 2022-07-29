@@ -1,10 +1,7 @@
 import { createTransport, SendMailOptions } from "nodemailer";
 import * as twilio from "twilio";
 
-const tw = twilio(
-  "ACc2eb523cecbb040726f30c0d30ee4322",
-  "df688f64f32624a8a364a35f9fdb309a"
-);
+const tw = twilio(process.env.TWILIO_SID, process.env.TWILIO_AUTH_TOKEN);
 
 const {
   BIBLE_EMAIL,
