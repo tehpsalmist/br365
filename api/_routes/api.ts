@@ -19,7 +19,11 @@ import {
   submitVerificationCode
 } from '../_controllers/users'
 import { getChapter } from '../_controllers/bible'
-import { sendBibleReading, migrate } from '../_controllers/triggers'
+import {
+  sendBibleReading,
+  migrate,
+  timerFailure
+} from '../_controllers/triggers'
 
 const apiRouter = Router()
 const webhookRouter = Router()
@@ -41,6 +45,7 @@ apiRouter.post('/resendVerificationText', resendVerificationText)
 apiRouter.post('/submitVerificationCode', submitVerificationCode)
 apiRouter.get('/bible/:version/:chapter', getChapter)
 webhookRouter.post('/sendBibleReading', sendBibleReading)
+webhookRouter.post('/timerFailure', timerFailure)
 webhookRouter.get('/migrate', migrate)
 
 export { apiRouter, webhookRouter }

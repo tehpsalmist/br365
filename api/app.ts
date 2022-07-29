@@ -38,34 +38,42 @@ const checkJwt = jwt({
 app.use(express.static(join(__dirname, 'public')))
 
 app.use('/api', checkJwt, apiRouter)
-app.use('/webhooks', (req, res, next) => {
-  if (req.get('X-BR365-SIGNATURE') === LATER_ON_BR365_HEADER_SECRET) {
-    return next()
-  }
+app.use(
+  '/webhooks',
+  (req, res, next) => {
+    if (req.get('X-BR365-SIGNATURE') === LATER_ON_BR365_HEADER_SECRET) {
+      return next()
+    }
 
-  res.status(401).json({ message: 'Unauthorized: request lacked necessary headers' })
-}, webhookRouter)
+    res
+      .status(401)
+      .json({ message: 'Unauthorized: request lacked necessary headers' })
+  },
+  webhookRouter
+)
 
 app.get('*', (req, res) => {
   res.sendFile(join(__dirname, 'public', 'index.html'))
 })
 
-mongoose.connect(getDbConnectionString(), {
-  useNewUrlParser: true,
-  useFindAndModify: false,
-  reconnectInterval: 1000,
-  reconnectTries: Number.MAX_VALUE,
-  useUnifiedTopology: true
-}).catch(err => {
-  console.error(new Date().toUTCString(), err)
-  errorEmail({
-    err,
-    subject: 'Mongoose Error',
-    message: 'Connection Error!'
+mongoose
+  .connect(getDbConnectionString(), {
+    useNewUrlParser: true,
+    useFindAndModify: false,
+    useUnifiedTopology: true
   })
-})
+  .catch((err) => {
+    console.error(new Date().toUTCString(), err)
+    errorEmail({
+      err,
+      subject: 'Mongoose Error',
+      message: 'Connection Error!'
+    })
+  })
 
-if (PRODUCTION) { }
-if (DEV) { }
+if (PRODUCTION) {
+}
+if (DEV) {
+}
 
 export default app
