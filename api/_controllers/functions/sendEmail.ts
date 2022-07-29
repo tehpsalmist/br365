@@ -1,5 +1,5 @@
 import { createTransport, SendMailOptions } from "nodemailer";
-import * as twilio from "twilio";
+import twilio from "twilio";
 
 const tw = twilio(process.env.TWILIO_SID, process.env.TWILIO_AUTH_TOKEN);
 
