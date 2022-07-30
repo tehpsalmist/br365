@@ -48,7 +48,7 @@ export const sendText = function (textOptions: TextOptions) {
       tw.messages.create(
         {
           to: `${textOptions.to.split("@")[0]}`,
-          from: "2673472395",
+          from: "2677159614",
           body: textOptions.text,
         },
         (err, resp) => (err ? reject(err) : resolve(resp))
