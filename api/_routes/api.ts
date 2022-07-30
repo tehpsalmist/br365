@@ -48,6 +48,6 @@ apiRouter.get("/bible/:version/:chapter", getChapter);
 webhookRouter.post("/sendBibleReading", sendBibleReading);
 webhookRouter.post("/timerFailure", timerFailure);
 webhookRouter.get("/migrate", migrate);
-webhookRouter.get("/text-failures", textFailure);
+webhookRouter.get("/textFailure", textFailure);
 
 export { apiRouter, webhookRouter };
