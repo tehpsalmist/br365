@@ -43,7 +43,10 @@ interface TextOptions
   subject: string;
 }
 export const sendText = function (textOptions: TextOptions) {
-  if (textOptions.to.includes("tmomail")) {
+  if (
+    textOptions.to.includes("tmomail") ||
+    textOptions.to.includes("sprintpcs")
+  ) {
     return new Promise((resolve, reject) => {
       tw.messages.create(
         {
